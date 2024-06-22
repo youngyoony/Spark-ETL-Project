@@ -1,0 +1,89 @@
+version: '3'
+
+x-spark-common: &spark-common
+  image: bitnami/spark:latest
+  volumes:
+    - ./jobs:/opt/bitnami/spark/jobs
+    - ./data:/opt/bitnami/spark/data
+    - ./resources:/opt/bitnami/spark/resources
+  networks:
+    - default-network
+
+services:
+  spark-master:
+    <<: *spark-common
+    hostname: spark-master
+    command: bin/spark-class org.apache.spark.deploy.master.Master
+    expose:
+      - "7077"
+    ports:
+      - "9090:8080"
+      - "7077:7077"
+      - "4444:4040"
+
+  spark-worker-1:
+    <<: *spark-common
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    depends_on:
+      - spark-master
+    environment:
+      SPARK_MODE: worker
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 1g
+      SPARK_MASTER_URL: spark://spark-master:7077
+
+  spark-worker-2:
+    <<: *spark-common
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    depends_on:
+      - spark-master
+    environment:
+      SPARK_MODE: worker
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 1g
+      SPARK_MASTER_URL: spark://spark-master:7077
+
+  #Jupyter notebook
+  jupyter-spark:
+    image: minz95/de2024:jupyter
+    #build:
+    #  dockerfile: jupyter/Dockerfile
+    networks:
+      - default-network
+    ports:
+      - "8888:8888"
+      - "4040-4080:4040-4080"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/data
+      - ./jobs:/home/jovyan/jobs
+      - ./resources:/home/jovyan/resources
+    environment:
+      - JUPYTER_TOKEN=password
+
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+    networks:
+      - default-network
+    environment:
+      - node.name=es
+      - discovery.type=single-node
+      - discovery.seed_hosts=es
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+      - xpack.security.http.ssl.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - cluster.routing.allocation.disk.threshold_enabled=false
+      - ELASTIC_PASSWORD=password
+    mem_limit: 1073741824
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./es-data:/usr/share/es/data
+    ports:
+      - 9200:9200
+
+networks:
+  default-network:
