@@ -1,0 +1,23 @@
+[2024-07-12T11:28:16.576+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_data_processing_pipeline.process_data manual__2024-07-12T11:28:15.532956+00:00 [queued]>
+[2024-07-12T11:28:16.579+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_data_processing_pipeline.process_data manual__2024-07-12T11:28:15.532956+00:00 [queued]>
+[2024-07-12T11:28:16.579+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-07-12T11:28:16.584+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): process_data> on 2024-07-12 11:28:15.532956+00:00
+[2024-07-12T11:28:16.586+0000] {standard_task_runner.py:57} INFO - Started process 1218 to run task
+[2024-07-12T11:28:16.588+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'spark_data_processing_pipeline', 'process_data', 'manual__2024-07-12T11:28:15.532956+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/spark-jobs_.py', '--cfg-path', '/tmp/tmpsg9mdfp4']
+[2024-07-12T11:28:16.590+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask process_data
+[2024-07-12T11:28:16.622+0000] {task_command.py:415} INFO - Running <TaskInstance: spark_data_processing_pipeline.process_data manual__2024-07-12T11:28:15.532956+00:00 [running]> on host c553c98b8e80
+[2024-07-12T11:28:16.656+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_data_processing_pipeline' AIRFLOW_CTX_TASK_ID='process_data' AIRFLOW_CTX_EXECUTION_DATE='2024-07-12T11:28:15.532956+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-12T11:28:15.532956+00:00'
+[2024-07-12T11:28:16.657+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-07-12T11:28:16.657+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'bash /opt/***/scripts/spark-submit.sh ']
+[2024-07-12T11:28:16.661+0000] {subprocess.py:86} INFO - Output:
+[2024-07-12T11:28:16.663+0000] {subprocess.py:93} INFO - bash: /opt/***/scripts/spark-submit.sh: No such file or directory
+[2024-07-12T11:28:16.663+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2024-07-12T11:28:16.669+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2024-07-12T11:28:16.671+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=spark_data_processing_pipeline, task_id=process_data, execution_date=20240712T112815, start_date=20240712T112816, end_date=20240712T112816
+[2024-07-12T11:28:16.675+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 5 for task process_data (Bash command failed. The command returned a non-zero exit code 127.; 1218)
+[2024-07-12T11:28:16.689+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-07-12T11:28:16.696+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

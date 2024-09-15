@@ -1,0 +1,368 @@
+[2024-08-09T13:20:46.754+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_data_processing_pipeline.process_data scheduled__2024-08-08T01:00:00+00:00 [queued]>
+[2024-08-09T13:20:46.757+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_data_processing_pipeline.process_data scheduled__2024-08-08T01:00:00+00:00 [queued]>
+[2024-08-09T13:20:46.757+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 3
+[2024-08-09T13:20:46.761+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): process_data> on 2024-08-08 01:00:00+00:00
+[2024-08-09T13:20:46.764+0000] {standard_task_runner.py:57} INFO - Started process 3280 to run task
+[2024-08-09T13:20:46.770+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'spark_data_processing_pipeline', 'process_data', 'scheduled__2024-08-08T01:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/spark-jobs_.py', '--cfg-path', '/tmp/tmp6jzxk8hr']
+[2024-08-09T13:20:46.774+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask process_data
+[2024-08-09T13:20:46.843+0000] {task_command.py:415} INFO - Running <TaskInstance: spark_data_processing_pipeline.process_data scheduled__2024-08-08T01:00:00+00:00 [running]> on host 27ef58cc88fc
+[2024-08-09T13:20:46.916+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_data_processing_pipeline' AIRFLOW_CTX_TASK_ID='process_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-08T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-08T01:00:00+00:00'
+[2024-08-09T13:20:46.917+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-08-09T13:20:46.919+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'bash /opt/***/jobs/spark-submit.sh /opt/***/jobs/main.py']
+[2024-08-09T13:20:46.927+0000] {subprocess.py:86} INFO - Output:
+[2024-08-09T13:20:46.930+0000] {subprocess.py:93} INFO - /opt/***/jobs/main.py
+[2024-08-09T13:20:46.989+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-08-09T13:20:48.027+0000] {subprocess.py:93} INFO - 24/08/09 13:20:48 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-08-09T13:20:51.543+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkContext: Running Spark version 3.5.1
+[2024-08-09T13:20:51.544+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkContext: OS info Linux, 6.6.32-linuxkit, aarch64
+[2024-08-09T13:20:51.544+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkContext: Java version 11.0.23
+[2024-08-09T13:20:51.557+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO ResourceUtils: ==============================================================
+[2024-08-09T13:20:51.558+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-08-09T13:20:51.558+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO ResourceUtils: ==============================================================
+[2024-08-09T13:20:51.558+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkContext: Submitted application: FinanceDataProcessing
+[2024-08-09T13:20:51.576+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 1024, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-08-09T13:20:51.583+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2024-08-09T13:20:51.584+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-08-09T13:20:51.629+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SecurityManager: Changing view acls to: ***
+[2024-08-09T13:20:51.629+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SecurityManager: Changing modify acls to: ***
+[2024-08-09T13:20:51.629+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SecurityManager: Changing view acls groups to:
+[2024-08-09T13:20:51.630+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SecurityManager: Changing modify acls groups to:
+[2024-08-09T13:20:51.630+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-08-09T13:20:51.763+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO Utils: Successfully started service 'sparkDriver' on port 39603.
+[2024-08-09T13:20:51.778+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkEnv: Registering MapOutputTracker
+[2024-08-09T13:20:51.801+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkEnv: Registering BlockManagerMaster
+[2024-08-09T13:20:51.812+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-08-09T13:20:51.813+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-08-09T13:20:51.814+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-08-09T13:20:51.823+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-a0457614-ccbb-4cfd-9b40-1810ff0eeae6
+[2024-08-09T13:20:51.829+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO MemoryStore: MemoryStore started with capacity 1458.4 MiB
+[2024-08-09T13:20:51.836+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-08-09T13:20:51.897+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-08-09T13:20:51.921+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-08-09T13:20:51.936+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO SparkContext: Added JAR file:///opt/bitnami/spark/resources/elasticsearch-spark-30_2.12-8.4.3.jar at spark://27ef58cc88fc:39603/jars/elasticsearch-spark-30_2.12-8.4.3.jar with timestamp 1723209651538
+[2024-08-09T13:20:51.969+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2024-08-09T13:20:51.993+0000] {subprocess.py:93} INFO - 24/08/09 13:20:51 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.4:7077 after 13 ms (0 ms spent in bootstraps)
+[2024-08-09T13:20:52.049+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20240809132052-0012
+[2024-08-09T13:20:52.052+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240809132052-0012/0 on worker-20240809124721-172.18.0.6-35359 (172.18.0.6:35359) with 1 core(s)
+[2024-08-09T13:20:52.054+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO StandaloneSchedulerBackend: Granted executor ID app-20240809132052-0012/0 on hostPort 172.18.0.6:35359 with 1 core(s), 1024.0 MiB RAM
+[2024-08-09T13:20:52.055+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240809132052-0012/1 on worker-20240809124721-172.18.0.7-36933 (172.18.0.7:36933) with 1 core(s)
+[2024-08-09T13:20:52.055+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO StandaloneSchedulerBackend: Granted executor ID app-20240809132052-0012/1 on hostPort 172.18.0.7:36933 with 1 core(s), 1024.0 MiB RAM
+[2024-08-09T13:20:52.062+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44789.
+[2024-08-09T13:20:52.063+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO NettyBlockTransferService: Server created on 27ef58cc88fc:44789
+[2024-08-09T13:20:52.065+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-08-09T13:20:52.073+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 27ef58cc88fc, 44789, None)
+[2024-08-09T13:20:52.078+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO BlockManagerMasterEndpoint: Registering block manager 27ef58cc88fc:44789 with 1458.4 MiB RAM, BlockManagerId(driver, 27ef58cc88fc, 44789, None)
+[2024-08-09T13:20:52.080+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 27ef58cc88fc, 44789, None)
+[2024-08-09T13:20:52.083+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 27ef58cc88fc, 44789, None)
+[2024-08-09T13:20:52.117+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240809132052-0012/1 is now RUNNING
+[2024-08-09T13:20:52.118+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240809132052-0012/0 is now RUNNING
+[2024-08-09T13:20:52.234+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-08-09T13:20:52.373+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-08-09T13:20:52.376+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO SharedState: Warehouse path is 'file:/tmp/***tmpatj8t0x0/spark-warehouse'.
+[2024-08-09T13:20:52.879+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO Version: Elasticsearch Hadoop v8.4.3 [a7873eb469]
+[2024-08-09T13:20:52.957+0000] {subprocess.py:93} INFO - 24/08/09 13:20:52 INFO InMemoryFileIndex: It took 46 ms to list leaf files for 1 paths.
+[2024-08-09T13:20:53.002+0000] {subprocess.py:93} INFO - 24/08/09 13:20:53 INFO InMemoryFileIndex: It took 1 ms to list leaf files for 1 paths.
+[2024-08-09T13:20:53.797+0000] {subprocess.py:93} INFO - 24/08/09 13:20:53 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.7:56238) with ID 1,  ResourceProfileId 0
+[2024-08-09T13:20:53.804+0000] {subprocess.py:93} INFO - 24/08/09 13:20:53 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.6:42380) with ID 0,  ResourceProfileId 0
+[2024-08-09T13:20:53.837+0000] {subprocess.py:93} INFO - 24/08/09 13:20:53 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.6:38051 with 1458.4 MiB RAM, BlockManagerId(0, 172.18.0.6, 38051, None)
+[2024-08-09T13:20:53.843+0000] {subprocess.py:93} INFO - 24/08/09 13:20:53 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.7:44015 with 1458.4 MiB RAM, BlockManagerId(1, 172.18.0.7, 44015, None)
+[2024-08-09T13:20:54.352+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO FileSourceStrategy: Pushed Filters:
+[2024-08-09T13:20:54.360+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO FileSourceStrategy: Post-Scan Filters:
+[2024-08-09T13:20:54.477+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 200.9 KiB, free 1458.2 MiB)
+[2024-08-09T13:20:54.511+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.7 KiB, free 1458.2 MiB)
+[2024-08-09T13:20:54.513+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 27ef58cc88fc:44789 (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T13:20:54.516+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO SparkContext: Created broadcast 0 from json at NativeMethodAccessorImpl.java:0
+[2024-08-09T13:20:54.524+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2024-08-09T13:20:54.596+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+[2024-08-09T13:20:54.605+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO DAGScheduler: Got job 0 (json at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-08-09T13:20:54.605+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO DAGScheduler: Final stage: ResultStage 0 (json at NativeMethodAccessorImpl.java:0)
+[2024-08-09T13:20:54.605+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO DAGScheduler: Parents of final stage: List()
+[2024-08-09T13:20:54.606+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO DAGScheduler: Missing parents: List()
+[2024-08-09T13:20:54.608+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-08-09T13:20:54.666+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 16.6 KiB, free 1458.2 MiB)
+[2024-08-09T13:20:54.667+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 7.8 KiB, free 1458.1 MiB)
+[2024-08-09T13:20:54.667+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 27ef58cc88fc:44789 (size: 7.8 KiB, free: 1458.4 MiB)
+[2024-08-09T13:20:54.668+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2024-08-09T13:20:54.677+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-08-09T13:20:54.677+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2024-08-09T13:20:54.692+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.18.0.6, executor 0, partition 0, PROCESS_LOCAL, 8432 bytes)
+[2024-08-09T13:20:54.815+0000] {subprocess.py:93} INFO - 24/08/09 13:20:54 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.18.0.6:38051 (size: 7.8 KiB, free: 1458.4 MiB)
+[2024-08-09T13:20:55.148+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.18.0.6:38051 (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T13:20:55.443+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 WARN TaskSetManager: Lost task 0.0 in stage 0.0 (TID 0) (172.18.0.6 executor 0): org.apache.spark.SparkFileNotFoundException: File file:/tmp/***tmpatj8t0x0/data/market_trends.json does not exist
+[2024-08-09T13:20:55.443+0000] {subprocess.py:93} INFO - It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+[2024-08-09T13:20:55.443+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:780)
+[2024-08-09T13:20:55.443+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+[2024-08-09T13:20:55.444+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+[2024-08-09T13:20:55.444+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+[2024-08-09T13:20:55.444+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+[2024-08-09T13:20:55.444+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+[2024-08-09T13:20:55.444+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty(Iterator.scala:387)
+[2024-08-09T13:20:55.444+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty$(Iterator.scala:387)
+[2024-08-09T13:20:55.444+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.isEmpty(Iterator.scala:1431)
+[2024-08-09T13:20:55.444+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption(TraversableOnce.scala:249)
+[2024-08-09T13:20:55.445+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption$(TraversableOnce.scala:248)
+[2024-08-09T13:20:55.445+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceLeftOption(Iterator.scala:1431)
+[2024-08-09T13:20:55.445+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption(TraversableOnce.scala:256)
+[2024-08-09T13:20:55.445+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption$(TraversableOnce.scala:256)
+[2024-08-09T13:20:55.445+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceOption(Iterator.scala:1431)
+[2024-08-09T13:20:55.445+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.json.JsonInferSchema.$anonfun$infer$1(JsonInferSchema.scala:107)
+[2024-08-09T13:20:55.445+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:858)
+[2024-08-09T13:20:55.445+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:858)
+[2024-08-09T13:20:55.446+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+[2024-08-09T13:20:55.446+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+[2024-08-09T13:20:55.446+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+[2024-08-09T13:20:55.446+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T13:20:55.446+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T13:20:55.446+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T13:20:55.446+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T13:20:55.447+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T13:20:55.447+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T13:20:55.447+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T13:20:55.447+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T13:20:55.448+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T13:20:55.448+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T13:20:55.448+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T13:20:55.448+0000] {subprocess.py:93} INFO - 
+[2024-08-09T13:20:55.449+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 INFO TaskSetManager: Starting task 0.1 in stage 0.0 (TID 1) (172.18.0.6, executor 0, partition 0, PROCESS_LOCAL, 8432 bytes)
+[2024-08-09T13:20:55.467+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 INFO TaskSetManager: Lost task 0.1 in stage 0.0 (TID 1) on 172.18.0.6, executor 0: org.apache.spark.SparkFileNotFoundException (File file:/tmp/***tmpatj8t0x0/data/market_trends.json does not exist
+[2024-08-09T13:20:55.468+0000] {subprocess.py:93} INFO - It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.) [duplicate 1]
+[2024-08-09T13:20:55.468+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 INFO TaskSetManager: Starting task 0.2 in stage 0.0 (TID 2) (172.18.0.6, executor 0, partition 0, PROCESS_LOCAL, 8432 bytes)
+[2024-08-09T13:20:55.486+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 INFO TaskSetManager: Lost task 0.2 in stage 0.0 (TID 2) on 172.18.0.6, executor 0: org.apache.spark.SparkFileNotFoundException (File file:/tmp/***tmpatj8t0x0/data/market_trends.json does not exist
+[2024-08-09T13:20:55.486+0000] {subprocess.py:93} INFO - It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.) [duplicate 2]
+[2024-08-09T13:20:55.487+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 INFO TaskSetManager: Starting task 0.3 in stage 0.0 (TID 3) (172.18.0.7, executor 1, partition 0, PROCESS_LOCAL, 8432 bytes)
+[2024-08-09T13:20:55.589+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.18.0.7:44015 (size: 7.8 KiB, free: 1458.4 MiB)
+[2024-08-09T13:20:55.940+0000] {subprocess.py:93} INFO - 24/08/09 13:20:55 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.18.0.7:44015 (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T13:20:56.148+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO TaskSetManager: Lost task 0.3 in stage 0.0 (TID 3) on 172.18.0.7, executor 1: org.apache.spark.SparkFileNotFoundException (File file:/tmp/***tmpatj8t0x0/data/market_trends.json does not exist
+[2024-08-09T13:20:56.149+0000] {subprocess.py:93} INFO - It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.) [duplicate 3]
+[2024-08-09T13:20:56.149+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 ERROR TaskSetManager: Task 0 in stage 0.0 failed 4 times; aborting job
+[2024-08-09T13:20:56.152+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2024-08-09T13:20:56.154+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO TaskSchedulerImpl: Cancelling stage 0
+[2024-08-09T13:20:56.154+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage cancelled: Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 3) (172.18.0.7 executor 1): org.apache.spark.SparkFileNotFoundException: File file:/tmp/***tmpatj8t0x0/data/market_trends.json does not exist
+[2024-08-09T13:20:56.154+0000] {subprocess.py:93} INFO - It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+[2024-08-09T13:20:56.155+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:780)
+[2024-08-09T13:20:56.155+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+[2024-08-09T13:20:56.155+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+[2024-08-09T13:20:56.156+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+[2024-08-09T13:20:56.156+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+[2024-08-09T13:20:56.156+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+[2024-08-09T13:20:56.156+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty(Iterator.scala:387)
+[2024-08-09T13:20:56.157+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty$(Iterator.scala:387)
+[2024-08-09T13:20:56.157+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.isEmpty(Iterator.scala:1431)
+[2024-08-09T13:20:56.157+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption(TraversableOnce.scala:249)
+[2024-08-09T13:20:56.157+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption$(TraversableOnce.scala:248)
+[2024-08-09T13:20:56.158+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceLeftOption(Iterator.scala:1431)
+[2024-08-09T13:20:56.158+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption(TraversableOnce.scala:256)
+[2024-08-09T13:20:56.158+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption$(TraversableOnce.scala:256)
+[2024-08-09T13:20:56.159+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceOption(Iterator.scala:1431)
+[2024-08-09T13:20:56.159+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.json.JsonInferSchema.$anonfun$infer$1(JsonInferSchema.scala:107)
+[2024-08-09T13:20:56.159+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:858)
+[2024-08-09T13:20:56.159+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:858)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T13:20:56.160+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - 
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - Driver stacktrace:
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO DAGScheduler: ResultStage 0 (json at NativeMethodAccessorImpl.java:0) failed in 1.541 s due to Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 3) (172.18.0.7 executor 1): org.apache.spark.SparkFileNotFoundException: File file:/tmp/***tmpatj8t0x0/data/market_trends.json does not exist
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:780)
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+[2024-08-09T13:20:56.161+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty(Iterator.scala:387)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty$(Iterator.scala:387)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.isEmpty(Iterator.scala:1431)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption(TraversableOnce.scala:249)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption$(TraversableOnce.scala:248)
+[2024-08-09T13:20:56.162+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceLeftOption(Iterator.scala:1431)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption(TraversableOnce.scala:256)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption$(TraversableOnce.scala:256)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceOption(Iterator.scala:1431)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.json.JsonInferSchema.$anonfun$infer$1(JsonInferSchema.scala:107)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:858)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:858)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T13:20:56.163+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T13:20:56.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T13:20:56.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T13:20:56.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T13:20:56.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T13:20:56.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T13:20:56.164+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T13:20:56.164+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T13:20:56.164+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T13:20:56.165+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T13:20:56.165+0000] {subprocess.py:93} INFO - 
+[2024-08-09T13:20:56.165+0000] {subprocess.py:93} INFO - Driver stacktrace:
+[2024-08-09T13:20:56.165+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO DAGScheduler: Job 0 failed: json at NativeMethodAccessorImpl.java:0, took 1.562722 s
+[2024-08-09T13:20:56.235+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-08-09T13:20:56.235+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/main.py", line 36, in <module>
+[2024-08-09T13:20:56.235+0000] {subprocess.py:93} INFO -     main()
+[2024-08-09T13:20:56.235+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/main.py", line 16, in main
+[2024-08-09T13:20:56.236+0000] {subprocess.py:93} INFO -     market_trends = process_data.load_data(spark, "data/market_trends.json")
+[2024-08-09T13:20:56.236+0000] {subprocess.py:93} INFO -                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-08-09T13:20:56.236+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/process_data.py", line 8, in load_data
+[2024-08-09T13:20:56.236+0000] {subprocess.py:93} INFO -     return spark.read.json(file_path)
+[2024-08-09T13:20:56.236+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-08-09T13:20:56.236+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 425, in json
+[2024-08-09T13:20:56.237+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-08-09T13:20:56.237+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2024-08-09T13:20:56.237+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2024-08-09T13:20:56.281+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o32.json.
+[2024-08-09T13:20:56.281+0000] {subprocess.py:93} INFO - : org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 3) (172.18.0.7 executor 1): org.apache.spark.SparkFileNotFoundException: File file:/tmp/***tmpatj8t0x0/data/market_trends.json does not exist
+[2024-08-09T13:20:56.281+0000] {subprocess.py:93} INFO - It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+[2024-08-09T13:20:56.282+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:780)
+[2024-08-09T13:20:56.282+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+[2024-08-09T13:20:56.282+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+[2024-08-09T13:20:56.282+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+[2024-08-09T13:20:56.282+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+[2024-08-09T13:20:56.282+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+[2024-08-09T13:20:56.282+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty(Iterator.scala:387)
+[2024-08-09T13:20:56.283+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty$(Iterator.scala:387)
+[2024-08-09T13:20:56.283+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.isEmpty(Iterator.scala:1431)
+[2024-08-09T13:20:56.283+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption(TraversableOnce.scala:249)
+[2024-08-09T13:20:56.283+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption$(TraversableOnce.scala:248)
+[2024-08-09T13:20:56.283+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceLeftOption(Iterator.scala:1431)
+[2024-08-09T13:20:56.283+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption(TraversableOnce.scala:256)
+[2024-08-09T13:20:56.283+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption$(TraversableOnce.scala:256)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceOption(Iterator.scala:1431)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.json.JsonInferSchema.$anonfun$infer$1(JsonInferSchema.scala:107)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:858)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:858)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T13:20:56.284+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T13:20:56.285+0000] {subprocess.py:93} INFO - 
+[2024-08-09T13:20:56.286+0000] {subprocess.py:93} INFO - Driver stacktrace:
+[2024-08-09T13:20:56.286+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+[2024-08-09T13:20:56.286+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+[2024-08-09T13:20:56.286+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+[2024-08-09T13:20:56.286+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-08-09T13:20:56.286+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-08-09T13:20:56.286+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-08-09T13:20:56.286+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2493)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.json.JsonInferSchema.infer(JsonInferSchema.scala:120)
+[2024-08-09T13:20:56.287+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.json.TextInputJsonDataSource$.$anonfun$inferFromDataset$5(JsonDataSource.scala:109)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.json.TextInputJsonDataSource$.inferFromDataset(JsonDataSource.scala:109)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.json.TextInputJsonDataSource$.infer(JsonDataSource.scala:98)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.json.JsonDataSource.inferSchema(JsonDataSource.scala:64)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.json.JsonFileFormat.inferSchema(JsonFileFormat.scala:59)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.$anonfun$getOrInferFileFormatSchema$11(DataSource.scala:208)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at scala.Option.orElse(Option.scala:447)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.getOrInferFileFormatSchema(DataSource.scala:205)
+[2024-08-09T13:20:56.288+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:407)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.json(DataFrameReader.scala:362)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2024-08-09T13:20:56.289+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:829)
+[2024-08-09T13:20:56.290+0000] {subprocess.py:93} INFO - Caused by: org.apache.spark.SparkFileNotFoundException: File file:/tmp/***tmpatj8t0x0/data/market_trends.json does not exist
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - It is possible the underlying files have been updated. You can explicitly invalidate the cache in Spark by running 'REFRESH TABLE tableName' command in SQL or by recreating the Dataset/DataFrame involved.
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.errors.QueryExecutionErrors$.readCurrentFileNotFoundError(QueryExecutionErrors.scala:780)
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:220)
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:279)
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:129)
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty(Iterator.scala:387)
+[2024-08-09T13:20:56.291+0000] {subprocess.py:93} INFO - 	at scala.collection.Iterator.isEmpty$(Iterator.scala:387)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.isEmpty(Iterator.scala:1431)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption(TraversableOnce.scala:249)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceLeftOption$(TraversableOnce.scala:248)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceLeftOption(Iterator.scala:1431)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption(TraversableOnce.scala:256)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at scala.collection.TraversableOnce.reduceOption$(TraversableOnce.scala:256)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at scala.collection.AbstractIterator.reduceOption(Iterator.scala:1431)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.json.JsonInferSchema.$anonfun$infer$1(JsonInferSchema.scala:107)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:858)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:858)
+[2024-08-09T13:20:56.292+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T13:20:56.293+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T13:20:56.294+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T13:20:56.294+0000] {subprocess.py:93} INFO - 
+[2024-08-09T13:20:56.345+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-08-09T13:20:56.346+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-08-09T13:20:56.352+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO SparkUI: Stopped Spark web UI at http://27ef58cc88fc:4040
+[2024-08-09T13:20:56.354+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-08-09T13:20:56.355+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-08-09T13:20:56.374+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-08-09T13:20:56.394+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO MemoryStore: MemoryStore cleared
+[2024-08-09T13:20:56.395+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO BlockManager: BlockManager stopped
+[2024-08-09T13:20:56.398+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-08-09T13:20:56.400+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-08-09T13:20:56.413+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO SparkContext: Successfully stopped SparkContext
+[2024-08-09T13:20:56.415+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO ShutdownHookManager: Shutdown hook called
+[2024-08-09T13:20:56.416+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO ShutdownHookManager: Deleting directory /tmp/spark-652403ae-f6b5-4a9a-ba9b-bb9a56fd4135
+[2024-08-09T13:20:56.416+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO ShutdownHookManager: Deleting directory /tmp/spark-652403ae-f6b5-4a9a-ba9b-bb9a56fd4135/pyspark-99fc7399-2132-4990-ac12-3cf464971dd4
+[2024-08-09T13:20:56.420+0000] {subprocess.py:93} INFO - 24/08/09 13:20:56 INFO ShutdownHookManager: Deleting directory /tmp/spark-f75e1d26-a600-42ce-8fb1-26c9820bb501
+[2024-08-09T13:20:56.446+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-08-09T13:20:56.458+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-08-09T13:20:56.461+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=spark_data_processing_pipeline, task_id=process_data, execution_date=20240808T010000, start_date=20240809T132046, end_date=20240809T132056
+[2024-08-09T13:20:56.468+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 16 for task process_data (Bash command failed. The command returned a non-zero exit code 1.; 3280)
+[2024-08-09T13:20:56.509+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-08-09T13:20:56.537+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

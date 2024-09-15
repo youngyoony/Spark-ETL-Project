@@ -1,0 +1,83 @@
+[2024-08-14T00:54:29.961+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline_api.process_data scheduled__2024-08-13T00:30:00+00:00 [queued]>
+[2024-08-14T00:54:29.966+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline_api.process_data scheduled__2024-08-13T00:30:00+00:00 [queued]>
+[2024-08-14T00:54:29.967+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-08-14T00:54:29.974+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): process_data> on 2024-08-13 00:30:00+00:00
+[2024-08-14T00:54:29.976+0000] {standard_task_runner.py:57} INFO - Started process 39501 to run task
+[2024-08-14T00:54:29.978+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_api', 'process_data', 'scheduled__2024-08-13T00:30:00+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/spark-jobs.py', '--cfg-path', '/tmp/tmpvlitbfw6']
+[2024-08-14T00:54:29.979+0000] {standard_task_runner.py:85} INFO - Job 42: Subtask process_data
+[2024-08-14T00:54:30.006+0000] {task_command.py:415} INFO - Running <TaskInstance: data_pipeline_api.process_data scheduled__2024-08-13T00:30:00+00:00 [running]> on host 27ef58cc88fc
+[2024-08-14T00:54:30.040+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline_api' AIRFLOW_CTX_TASK_ID='process_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-13T00:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-13T00:30:00+00:00'
+[2024-08-14T00:54:30.042+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-08-14T00:54:30.042+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'bash /opt/***/jobs/spark-submit.sh /opt/***/jobs/process_data.py ']
+[2024-08-14T00:54:30.047+0000] {subprocess.py:86} INFO - Output:
+[2024-08-14T00:54:30.056+0000] {subprocess.py:93} INFO - /opt/***/jobs/process_data.py
+[2024-08-14T00:54:30.130+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-08-14T00:54:31.637+0000] {subprocess.py:93} INFO - 24/08/14 00:54:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-08-14T00:54:32.715+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SparkContext: Running Spark version 3.5.1
+[2024-08-14T00:54:32.716+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SparkContext: OS info Linux, 6.6.32-linuxkit, aarch64
+[2024-08-14T00:54:32.720+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SparkContext: Java version 11.0.23
+[2024-08-14T00:54:32.751+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO ResourceUtils: ==============================================================
+[2024-08-14T00:54:32.752+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-08-14T00:54:32.752+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO ResourceUtils: ==============================================================
+[2024-08-14T00:54:32.753+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SparkContext: Submitted application: FinanceDataProcessing
+[2024-08-14T00:54:32.787+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 1024, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-08-14T00:54:32.798+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2024-08-14T00:54:32.801+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-08-14T00:54:32.917+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SecurityManager: Changing view acls to: ***
+[2024-08-14T00:54:32.921+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SecurityManager: Changing modify acls to: ***
+[2024-08-14T00:54:32.921+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SecurityManager: Changing view acls groups to:
+[2024-08-14T00:54:32.923+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SecurityManager: Changing modify acls groups to:
+[2024-08-14T00:54:32.924+0000] {subprocess.py:93} INFO - 24/08/14 00:54:32 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-08-14T00:54:33.215+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO Utils: Successfully started service 'sparkDriver' on port 37995.
+[2024-08-14T00:54:33.250+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO SparkEnv: Registering MapOutputTracker
+[2024-08-14T00:54:33.286+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO SparkEnv: Registering BlockManagerMaster
+[2024-08-14T00:54:33.304+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-08-14T00:54:33.305+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-08-14T00:54:33.308+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-08-14T00:54:33.332+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-d8f19883-5508-43c6-a856-6b39c0005922
+[2024-08-14T00:54:33.346+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO MemoryStore: MemoryStore started with capacity 1458.4 MiB
+[2024-08-14T00:54:33.365+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-08-14T00:54:33.518+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-08-14T00:54:33.584+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-08-14T00:54:33.614+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO SparkContext: Added JAR file:///opt/bitnami/spark/resources/elasticsearch-spark-30_2.12-8.4.3.jar at spark://27ef58cc88fc:37995/jars/elasticsearch-spark-30_2.12-8.4.3.jar with timestamp 1723596872706
+[2024-08-14T00:54:33.741+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2024-08-14T00:54:33.825+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.4:7077 after 49 ms (0 ms spent in bootstraps)
+[2024-08-14T00:54:33.958+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20240814005433-0030
+[2024-08-14T00:54:33.970+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40143.
+[2024-08-14T00:54:33.973+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO NettyBlockTransferService: Server created on 27ef58cc88fc:40143
+[2024-08-14T00:54:33.977+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-08-14T00:54:33.990+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 27ef58cc88fc, 40143, None)
+[2024-08-14T00:54:33.991+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240814005433-0030/0 on worker-20240809124721-172.18.0.6-35359 (172.18.0.6:35359) with 1 core(s)
+[2024-08-14T00:54:33.996+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO BlockManagerMasterEndpoint: Registering block manager 27ef58cc88fc:40143 with 1458.4 MiB RAM, BlockManagerId(driver, 27ef58cc88fc, 40143, None)
+[2024-08-14T00:54:34.000+0000] {subprocess.py:93} INFO - 24/08/14 00:54:33 INFO StandaloneSchedulerBackend: Granted executor ID app-20240814005433-0030/0 on hostPort 172.18.0.6:35359 with 1 core(s), 1024.0 MiB RAM
+[2024-08-14T00:54:34.001+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240814005433-0030/1 on worker-20240809124721-172.18.0.7-36933 (172.18.0.7:36933) with 1 core(s)
+[2024-08-14T00:54:34.003+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO StandaloneSchedulerBackend: Granted executor ID app-20240814005433-0030/1 on hostPort 172.18.0.7:36933 with 1 core(s), 1024.0 MiB RAM
+[2024-08-14T00:54:34.013+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 27ef58cc88fc, 40143, None)
+[2024-08-14T00:54:34.015+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 27ef58cc88fc, 40143, None)
+[2024-08-14T00:54:34.176+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240814005433-0030/0 is now RUNNING
+[2024-08-14T00:54:34.177+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240814005433-0030/1 is now RUNNING
+[2024-08-14T00:54:34.408+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-08-14T00:54:34.785+0000] {subprocess.py:93} INFO - =========== Processing (Market trends) ===================
+[2024-08-14T00:54:34.796+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-08-14T00:54:34.799+0000] {subprocess.py:93} INFO - 24/08/14 00:54:34 INFO SharedState: Warehouse path is 'file:/tmp/***tmp1eoayy11/spark-warehouse'.
+[2024-08-14T00:54:35.082+0000] {local_task_job_runner.py:274} WARNING - Recorded pid 39702 does not match the current pid 39501
+[2024-08-14T00:54:35.085+0000] {process_utils.py:131} INFO - Sending 15 to group 39501. PIDs of all processes in the group: [39503, 39507, 39658, 39501]
+[2024-08-14T00:54:35.087+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 39501
+[2024-08-14T00:54:35.090+0000] {taskinstance.py:1630} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-08-14T00:54:35.092+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-08-14T00:54:35.126+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 1632, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-08-14T00:54:35.156+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=data_pipeline_api, task_id=process_data, execution_date=20240813T003000, start_date=20240814T005432, end_date=20240814T005435
+[2024-08-14T00:54:35.184+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 42 for task process_data (Task received SIGTERM signal; 39501)
+[2024-08-14T00:54:35.230+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=39503, status='terminated', started='00:54:30') (39503) terminated with exit code None
+[2024-08-14T00:54:35.235+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=39501, status='terminated', exitcode=1, started='00:54:29') (39501) terminated with exit code 1
+[2024-08-14T00:54:35.237+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=39658, status='terminated', started='00:54:31') (39658) terminated with exit code None
+[2024-08-14T00:54:35.420+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=39507, status='terminated', started='00:54:30') (39507) terminated with exit code None

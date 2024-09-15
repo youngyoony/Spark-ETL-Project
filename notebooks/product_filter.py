@@ -2,7 +2,14 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 import pyspark.sql.functions as F
 
-def load_data(spark):
+spark = (SparkSession
+         .builder
+         .master("local")
+         .appName("product-data")
+         .getOrCreate())
+sc = spark.sparkContext
+
+def load_data(sc):
     # 고객 데이터 스키마 정의
     customers_schema = StructType([
         StructField('Id', IntegerType(), True),
@@ -74,3 +81,4 @@ def analyze_data(final_df):
     print('===========특정 고객(103416) 구매 제품===========')
     specific_customer_data = final_df.filter(final_df["CustomerID"] == 103416)
     specific_customer_data.show()
+

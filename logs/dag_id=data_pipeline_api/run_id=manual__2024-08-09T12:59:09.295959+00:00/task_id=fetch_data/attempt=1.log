@@ -1,0 +1,21 @@
+[2024-08-09T12:59:10.486+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline_api.fetch_data manual__2024-08-09T12:59:09.295959+00:00 [queued]>
+[2024-08-09T12:59:10.491+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline_api.fetch_data manual__2024-08-09T12:59:09.295959+00:00 [queued]>
+[2024-08-09T12:59:10.492+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-08-09T12:59:10.499+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): fetch_data> on 2024-08-09 12:59:09.295959+00:00
+[2024-08-09T12:59:10.503+0000] {standard_task_runner.py:57} INFO - Started process 1290 to run task
+[2024-08-09T12:59:10.505+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_api', 'fetch_data', 'manual__2024-08-09T12:59:09.295959+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/spark-jobs.py', '--cfg-path', '/tmp/tmpmm1ngycm']
+[2024-08-09T12:59:10.507+0000] {standard_task_runner.py:85} INFO - Job 10: Subtask fetch_data
+[2024-08-09T12:59:10.576+0000] {task_command.py:415} INFO - Running <TaskInstance: data_pipeline_api.fetch_data manual__2024-08-09T12:59:09.295959+00:00 [running]> on host 27ef58cc88fc
+[2024-08-09T12:59:10.673+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline_api' AIRFLOW_CTX_TASK_ID='fetch_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-09T12:59:09.295959+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-09T12:59:09.295959+00:00'
+[2024-08-09T12:59:10.675+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-08-09T12:59:10.676+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'bash /opt/***/jobs/spark-submit.sh /opt/***/jobs/fetch_data.py ']
+[2024-08-09T12:59:10.685+0000] {subprocess.py:86} INFO - Output:
+[2024-08-09T12:59:10.688+0000] {subprocess.py:93} INFO - /opt/***/jobs/fetch_data.py
+[2024-08-09T12:59:10.764+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-08-09T12:59:12.664+0000] {subprocess.py:93} INFO - 24/08/09 12:59:12 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-08-09T12:59:16.339+0000] {subprocess.py:93} INFO - 24/08/09 12:59:16 INFO ShutdownHookManager: Shutdown hook called
+[2024-08-09T12:59:16.346+0000] {subprocess.py:93} INFO - 24/08/09 12:59:16 INFO ShutdownHookManager: Deleting directory /tmp/spark-1f06eab0-853d-4a58-b8ed-05bec1a0261e
+[2024-08-09T12:59:16.439+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-08-09T12:59:16.517+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=data_pipeline_api, task_id=fetch_data, execution_date=20240809T125909, start_date=20240809T125910, end_date=20240809T125916
+[2024-08-09T12:59:16.584+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-08-09T12:59:16.633+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

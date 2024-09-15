@@ -1,11 +1,12 @@
 #!/bin/bash
 
-DATA_DIR=/Users/user/de-2024/data
+# download-data.sh
+python3 -c "
+import fetch_data
 
-TARGET_DATE=`date -v-1d "+%Y-%m-%d-%H"`
-TARGET_FILE=${TARGET_DATE}.json.gz
-TARGET_URL=https://data.githubarchive.org/${TARGET_FILE}
+market_trends = fetch_data.fetch_market_trends()
+fetch_data.save_data_to_file(market_trends, 'jobs/data/market_trends.json')
 
-wget ${TARGET_URL} -P ${DATA_DIR} --backups=0
-gunzip -f ${DATA_DIR}/${TARGET_FILE}
-
+stock_time_series = fetch_data.fetch_stock_time_series()
+fetch_data.save_data_to_file(stock_time_series, 'jobs/data/stock_time_series.json')
+"

@@ -1,0 +1,609 @@
+[2024-08-09T12:09:47.458+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline_api.process_data scheduled__2024-08-08T00:30:00+00:00 [queued]>
+[2024-08-09T12:09:47.461+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline_api.process_data scheduled__2024-08-08T00:30:00+00:00 [queued]>
+[2024-08-09T12:09:47.461+0000] {taskinstance.py:1359} INFO - Starting attempt 3 of 3
+[2024-08-09T12:09:47.466+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): process_data> on 2024-08-08 00:30:00+00:00
+[2024-08-09T12:09:47.469+0000] {standard_task_runner.py:57} INFO - Started process 13514 to run task
+[2024-08-09T12:09:47.471+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_api', 'process_data', 'scheduled__2024-08-08T00:30:00+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/spark-jobs.py', '--cfg-path', '/tmp/tmpitbx9rwv']
+[2024-08-09T12:09:47.474+0000] {standard_task_runner.py:85} INFO - Job 95: Subtask process_data
+[2024-08-09T12:09:47.500+0000] {task_command.py:415} INFO - Running <TaskInstance: data_pipeline_api.process_data scheduled__2024-08-08T00:30:00+00:00 [running]> on host c553c98b8e80
+[2024-08-09T12:09:47.535+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline_api' AIRFLOW_CTX_TASK_ID='process_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-08T00:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-08T00:30:00+00:00'
+[2024-08-09T12:09:47.536+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-08-09T12:09:47.537+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'bash /opt/***/jobs/spark-submit.sh /opt/***/jobs/process_data.py ']
+[2024-08-09T12:09:47.542+0000] {subprocess.py:86} INFO - Output:
+[2024-08-09T12:09:47.545+0000] {subprocess.py:93} INFO - /opt/***/jobs/process_data.py
+[2024-08-09T12:09:47.590+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-08-09T12:09:48.557+0000] {subprocess.py:93} INFO - 24/08/09 12:09:48 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-08-09T12:09:49.261+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkContext: Running Spark version 3.5.1
+[2024-08-09T12:09:49.262+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkContext: OS info Linux, 6.6.32-linuxkit, aarch64
+[2024-08-09T12:09:49.262+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkContext: Java version 11.0.23
+[2024-08-09T12:09:49.290+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO ResourceUtils: ==============================================================
+[2024-08-09T12:09:49.291+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-08-09T12:09:49.292+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO ResourceUtils: ==============================================================
+[2024-08-09T12:09:49.292+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkContext: Submitted application: FinanceDataProcessing
+[2024-08-09T12:09:49.327+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 2048, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-08-09T12:09:49.337+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2024-08-09T12:09:49.338+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-08-09T12:09:49.383+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SecurityManager: Changing view acls to: ***
+[2024-08-09T12:09:49.383+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SecurityManager: Changing modify acls to: ***
+[2024-08-09T12:09:49.383+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SecurityManager: Changing view acls groups to:
+[2024-08-09T12:09:49.384+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SecurityManager: Changing modify acls groups to:
+[2024-08-09T12:09:49.384+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-08-09T12:09:49.525+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO Utils: Successfully started service 'sparkDriver' on port 36963.
+[2024-08-09T12:09:49.554+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkEnv: Registering MapOutputTracker
+[2024-08-09T12:09:49.575+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkEnv: Registering BlockManagerMaster
+[2024-08-09T12:09:49.585+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-08-09T12:09:49.585+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-08-09T12:09:49.588+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-08-09T12:09:49.599+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-7d0d393a-a76c-4a6c-bb7a-2c94a77c037d
+[2024-08-09T12:09:49.607+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO MemoryStore: MemoryStore started with capacity 3.0 GiB
+[2024-08-09T12:09:49.618+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-08-09T12:09:49.701+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-08-09T12:09:49.739+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2024-08-09T12:09:49.743+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+[2024-08-09T12:09:49.764+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO SparkContext: Added JAR file:///opt/bitnami/spark/resources/elasticsearch-spark-30_2.12-8.4.3.jar at spark://c553c98b8e80:36963/jars/elasticsearch-spark-30_2.12-8.4.3.jar with timestamp 1723205389251
+[2024-08-09T12:09:49.830+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2024-08-09T12:09:49.954+0000] {subprocess.py:93} INFO - 24/08/09 12:09:49 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 71 ms (0 ms spent in bootstraps)
+[2024-08-09T12:09:50.047+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20240809120950-0007
+[2024-08-09T12:09:50.054+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41891.
+[2024-08-09T12:09:50.054+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO NettyBlockTransferService: Server created on c553c98b8e80:41891
+[2024-08-09T12:09:50.055+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-08-09T12:09:50.056+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO BlockManager: external shuffle service port = 7337
+[2024-08-09T12:09:50.060+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c553c98b8e80, 41891, None)
+[2024-08-09T12:09:50.062+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO BlockManagerMasterEndpoint: Registering block manager c553c98b8e80:41891 with 3.0 GiB RAM, BlockManagerId(driver, c553c98b8e80, 41891, None)
+[2024-08-09T12:09:50.063+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c553c98b8e80, 41891, None)
+[2024-08-09T12:09:50.066+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c553c98b8e80, 41891, None)
+[2024-08-09T12:09:50.149+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 WARN Utils: spark.executor.instances less than spark.dynamicAllocation.minExecutors is invalid, ignoring its setting, please update your configs.
+[2024-08-09T12:09:50.149+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO Utils: Using initial executors = 1, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+[2024-08-09T12:09:50.210+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-08-09T12:09:50.337+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-08-09T12:09:50.342+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO SharedState: Warehouse path is 'file:/tmp/***tmp2pt_e5lq/spark-warehouse'.
+[2024-08-09T12:09:50.790+0000] {subprocess.py:93} INFO - 24/08/09 12:09:50 INFO Version: Elasticsearch Hadoop v8.4.3 [a7873eb469]
+[2024-08-09T12:09:51.030+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-08-09T12:09:51.030+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/process_data.py", line 51, in <module>
+[2024-08-09T12:09:51.031+0000] {subprocess.py:93} INFO -     market_trends = load_data(spark, "data/market_trends.json")
+[2024-08-09T12:09:51.031+0000] {subprocess.py:93} INFO -                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-08-09T12:09:51.031+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/process_data.py", line 6, in load_data
+[2024-08-09T12:09:51.031+0000] {subprocess.py:93} INFO -     return spark.read.json(file_path)
+[2024-08-09T12:09:51.031+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-08-09T12:09:51.031+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 425, in json
+[2024-08-09T12:09:51.032+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-08-09T12:09:51.032+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+[2024-08-09T12:09:51.036+0000] {subprocess.py:93} INFO - pyspark.errors.exceptions.captured.AnalysisException: [PATH_NOT_FOUND] Path does not exist: file:/tmp/***tmp2pt_e5lq/data/market_trends.json.
+[2024-08-09T12:09:51.066+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-08-09T12:09:51.066+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-08-09T12:09:51.071+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO SparkUI: Stopped Spark web UI at http://c553c98b8e80:4041
+[2024-08-09T12:09:51.074+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-08-09T12:09:51.076+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-08-09T12:09:51.088+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-08-09T12:09:51.099+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO MemoryStore: MemoryStore cleared
+[2024-08-09T12:09:51.099+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO BlockManager: BlockManager stopped
+[2024-08-09T12:09:51.102+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-08-09T12:09:51.103+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-08-09T12:09:51.107+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO SparkContext: Successfully stopped SparkContext
+[2024-08-09T12:09:51.107+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO ShutdownHookManager: Shutdown hook called
+[2024-08-09T12:09:51.108+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO ShutdownHookManager: Deleting directory /tmp/spark-2b2181f3-5bf2-47f3-8749-12ad5c5c708b
+[2024-08-09T12:09:51.112+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO ShutdownHookManager: Deleting directory /tmp/spark-2b2181f3-5bf2-47f3-8749-12ad5c5c708b/pyspark-158e49d0-1400-49f8-b16b-26e3993651ec
+[2024-08-09T12:09:51.116+0000] {subprocess.py:93} INFO - 24/08/09 12:09:51 INFO ShutdownHookManager: Deleting directory /tmp/spark-9d6757bc-c27e-4442-befb-82f5c0492b64
+[2024-08-09T12:09:51.138+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-08-09T12:09:51.154+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-08-09T12:09:51.158+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=data_pipeline_api, task_id=process_data, execution_date=20240808T003000, start_date=20240809T120947, end_date=20240809T120951
+[2024-08-09T12:09:51.167+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 95 for task process_data (Bash command failed. The command returned a non-zero exit code 1.; 13514)
+[2024-08-09T12:09:51.176+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-08-09T12:09:51.200+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-08-09T12:56:28.641+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline_api.process_data scheduled__2024-08-08T00:30:00+00:00 [queued]>
+[2024-08-09T12:56:28.644+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline_api.process_data scheduled__2024-08-08T00:30:00+00:00 [queued]>
+[2024-08-09T12:56:28.644+0000] {taskinstance.py:1359} INFO - Starting attempt 3 of 3
+[2024-08-09T12:56:28.648+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): process_data> on 2024-08-08 00:30:00+00:00
+[2024-08-09T12:56:28.651+0000] {standard_task_runner.py:57} INFO - Started process 1070 to run task
+[2024-08-09T12:56:28.653+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_api', 'process_data', 'scheduled__2024-08-08T00:30:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/spark-jobs.py', '--cfg-path', '/tmp/tmpbhqjo2dx']
+[2024-08-09T12:56:28.655+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask process_data
+[2024-08-09T12:56:28.689+0000] {task_command.py:415} INFO - Running <TaskInstance: data_pipeline_api.process_data scheduled__2024-08-08T00:30:00+00:00 [running]> on host 27ef58cc88fc
+[2024-08-09T12:56:28.723+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline_api' AIRFLOW_CTX_TASK_ID='process_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-08T00:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-08T00:30:00+00:00'
+[2024-08-09T12:56:28.724+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-08-09T12:56:28.725+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'bash /opt/***/jobs/spark-submit.sh /opt/***/jobs/process_data.py ']
+[2024-08-09T12:56:28.728+0000] {subprocess.py:86} INFO - Output:
+[2024-08-09T12:56:28.731+0000] {subprocess.py:93} INFO - /opt/***/jobs/process_data.py
+[2024-08-09T12:56:28.775+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-08-09T12:56:29.654+0000] {subprocess.py:93} INFO - 24/08/09 12:56:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-08-09T12:56:30.234+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkContext: Running Spark version 3.5.1
+[2024-08-09T12:56:30.237+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkContext: OS info Linux, 6.6.32-linuxkit, aarch64
+[2024-08-09T12:56:30.237+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkContext: Java version 11.0.23
+[2024-08-09T12:56:30.248+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO ResourceUtils: ==============================================================
+[2024-08-09T12:56:30.248+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-08-09T12:56:30.248+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO ResourceUtils: ==============================================================
+[2024-08-09T12:56:30.248+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkContext: Submitted application: FinanceDataProcessing
+[2024-08-09T12:56:30.267+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 1024, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-08-09T12:56:30.274+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2024-08-09T12:56:30.275+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-08-09T12:56:30.304+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SecurityManager: Changing view acls to: ***
+[2024-08-09T12:56:30.305+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SecurityManager: Changing modify acls to: ***
+[2024-08-09T12:56:30.305+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SecurityManager: Changing view acls groups to:
+[2024-08-09T12:56:30.305+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SecurityManager: Changing modify acls groups to:
+[2024-08-09T12:56:30.305+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-08-09T12:56:30.416+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO Utils: Successfully started service 'sparkDriver' on port 40577.
+[2024-08-09T12:56:30.434+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkEnv: Registering MapOutputTracker
+[2024-08-09T12:56:30.451+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkEnv: Registering BlockManagerMaster
+[2024-08-09T12:56:30.460+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-08-09T12:56:30.460+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-08-09T12:56:30.462+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-08-09T12:56:30.481+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-75567ada-6921-47b6-9112-6ef35f906ae6
+[2024-08-09T12:56:30.486+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO MemoryStore: MemoryStore started with capacity 1458.4 MiB
+[2024-08-09T12:56:30.493+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-08-09T12:56:30.552+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-08-09T12:56:30.580+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-08-09T12:56:30.598+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO SparkContext: Added JAR file:///opt/bitnami/spark/resources/elasticsearch-spark-30_2.12-8.4.3.jar at spark://27ef58cc88fc:40577/jars/elasticsearch-spark-30_2.12-8.4.3.jar with timestamp 1723208190230
+[2024-08-09T12:56:30.635+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2024-08-09T12:56:30.660+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.4:7077 after 13 ms (0 ms spent in bootstraps)
+[2024-08-09T12:56:30.708+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20240809125630-0004
+[2024-08-09T12:56:30.710+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240809125630-0004/0 on worker-20240809124721-172.18.0.6-35359 (172.18.0.6:35359) with 1 core(s)
+[2024-08-09T12:56:30.712+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneSchedulerBackend: Granted executor ID app-20240809125630-0004/0 on hostPort 172.18.0.6:35359 with 1 core(s), 1024.0 MiB RAM
+[2024-08-09T12:56:30.712+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240809125630-0004/1 on worker-20240809124721-172.18.0.7-36933 (172.18.0.7:36933) with 1 core(s)
+[2024-08-09T12:56:30.712+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneSchedulerBackend: Granted executor ID app-20240809125630-0004/1 on hostPort 172.18.0.7:36933 with 1 core(s), 1024.0 MiB RAM
+[2024-08-09T12:56:30.716+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34447.
+[2024-08-09T12:56:30.716+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO NettyBlockTransferService: Server created on 27ef58cc88fc:34447
+[2024-08-09T12:56:30.717+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-08-09T12:56:30.723+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 27ef58cc88fc, 34447, None)
+[2024-08-09T12:56:30.726+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO BlockManagerMasterEndpoint: Registering block manager 27ef58cc88fc:34447 with 1458.4 MiB RAM, BlockManagerId(driver, 27ef58cc88fc, 34447, None)
+[2024-08-09T12:56:30.728+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 27ef58cc88fc, 34447, None)
+[2024-08-09T12:56:30.728+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 27ef58cc88fc, 34447, None)
+[2024-08-09T12:56:30.773+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240809125630-0004/0 is now RUNNING
+[2024-08-09T12:56:30.774+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240809125630-0004/1 is now RUNNING
+[2024-08-09T12:56:30.877+0000] {subprocess.py:93} INFO - 24/08/09 12:56:30 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-08-09T12:56:31.037+0000] {subprocess.py:93} INFO - 24/08/09 12:56:31 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-08-09T12:56:31.038+0000] {subprocess.py:93} INFO - 24/08/09 12:56:31 INFO SharedState: Warehouse path is 'file:/tmp/***tmpfe4dgb20/spark-warehouse'.
+[2024-08-09T12:56:31.628+0000] {subprocess.py:93} INFO - 24/08/09 12:56:31 INFO Version: Elasticsearch Hadoop v8.4.3 [a7873eb469]
+[2024-08-09T12:56:31.698+0000] {subprocess.py:93} INFO - 24/08/09 12:56:31 INFO InMemoryFileIndex: It took 37 ms to list leaf files for 1 paths.
+[2024-08-09T12:56:31.740+0000] {subprocess.py:93} INFO - 24/08/09 12:56:31 INFO InMemoryFileIndex: It took 2 ms to list leaf files for 1 paths.
+[2024-08-09T12:56:32.401+0000] {subprocess.py:93} INFO - 24/08/09 12:56:32 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.6:33294) with ID 0,  ResourceProfileId 0
+[2024-08-09T12:56:32.439+0000] {subprocess.py:93} INFO - 24/08/09 12:56:32 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.7:52864) with ID 1,  ResourceProfileId 0
+[2024-08-09T12:56:32.456+0000] {subprocess.py:93} INFO - 24/08/09 12:56:32 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.6:34823 with 1458.4 MiB RAM, BlockManagerId(0, 172.18.0.6, 34823, None)
+[2024-08-09T12:56:32.471+0000] {subprocess.py:93} INFO - 24/08/09 12:56:32 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.7:44425 with 1458.4 MiB RAM, BlockManagerId(1, 172.18.0.7, 44425, None)
+[2024-08-09T12:56:33.028+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO FileSourceStrategy: Pushed Filters:
+[2024-08-09T12:56:33.036+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO FileSourceStrategy: Post-Scan Filters:
+[2024-08-09T12:56:33.146+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 200.9 KiB, free 1458.2 MiB)
+[2024-08-09T12:56:33.170+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.7 KiB, free 1458.2 MiB)
+[2024-08-09T12:56:33.171+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 27ef58cc88fc:34447 (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:33.174+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO SparkContext: Created broadcast 0 from json at NativeMethodAccessorImpl.java:0
+[2024-08-09T12:56:33.180+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2024-08-09T12:56:33.266+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+[2024-08-09T12:56:33.274+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: Got job 0 (json at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-08-09T12:56:33.275+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: Final stage: ResultStage 0 (json at NativeMethodAccessorImpl.java:0)
+[2024-08-09T12:56:33.275+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: Parents of final stage: List()
+[2024-08-09T12:56:33.276+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: Missing parents: List()
+[2024-08-09T12:56:33.277+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-08-09T12:56:33.315+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 16.6 KiB, free 1458.2 MiB)
+[2024-08-09T12:56:33.317+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 7.8 KiB, free 1458.1 MiB)
+[2024-08-09T12:56:33.317+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 27ef58cc88fc:34447 (size: 7.8 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:33.318+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2024-08-09T12:56:33.326+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-08-09T12:56:33.326+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2024-08-09T12:56:33.338+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.18.0.7, executor 1, partition 0, PROCESS_LOCAL, 8427 bytes)
+[2024-08-09T12:56:33.433+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.18.0.7:44425 (size: 7.8 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:33.741+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.18.0.7:44425 (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:33.866+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 533 ms on 172.18.0.7 (executor 1) (1/1)
+[2024-08-09T12:56:33.868+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2024-08-09T12:56:33.872+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: ResultStage 0 (json at NativeMethodAccessorImpl.java:0) finished in 0.588 s
+[2024-08-09T12:56:33.875+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-08-09T12:56:33.875+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2024-08-09T12:56:33.878+0000] {subprocess.py:93} INFO - 24/08/09 12:56:33 INFO DAGScheduler: Job 0 finished: json at NativeMethodAccessorImpl.java:0, took 0.611238 s
+[2024-08-09T12:56:34.173+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 27ef58cc88fc:34447 in memory (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:34.188+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.18.0.7:44425 in memory (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:34.198+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 27ef58cc88fc:34447 in memory (size: 7.8 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:34.200+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.18.0.7:44425 in memory (size: 7.8 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:34.211+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO DataSource: Overwriting data for market_trends
+[2024-08-09T12:56:34.230+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO RestRepository: Skipping delete by query as the plugin is not installed...
+[2024-08-09T12:56:34.294+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO FileSourceStrategy: Pushed Filters:
+[2024-08-09T12:56:34.294+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO FileSourceStrategy: Post-Scan Filters:
+[2024-08-09T12:56:34.452+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO CodeGenerator: Code generated in 120.223542 ms
+[2024-08-09T12:56:34.457+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 200.9 KiB, free 1458.2 MiB)
+[2024-08-09T12:56:34.461+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.7 KiB, free 1458.2 MiB)
+[2024-08-09T12:56:34.465+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 27ef58cc88fc:34447 (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:34.466+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO SparkContext: Created broadcast 2 from rdd at EsSparkSQL.scala:103
+[2024-08-09T12:56:34.467+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2024-08-09T12:56:34.487+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO SparkContext: Starting job: runJob at EsSparkSQL.scala:103
+[2024-08-09T12:56:34.488+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO DAGScheduler: Got job 1 (runJob at EsSparkSQL.scala:103) with 1 output partitions
+[2024-08-09T12:56:34.489+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO DAGScheduler: Final stage: ResultStage 1 (runJob at EsSparkSQL.scala:103)
+[2024-08-09T12:56:34.490+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO DAGScheduler: Parents of final stage: List()
+[2024-08-09T12:56:34.491+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO DAGScheduler: Missing parents: List()
+[2024-08-09T12:56:34.493+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[9] at rdd at EsSparkSQL.scala:103), which has no missing parents
+[2024-08-09T12:56:34.520+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 36.9 KiB, free 1458.1 MiB)
+[2024-08-09T12:56:34.521+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 15.6 KiB, free 1458.1 MiB)
+[2024-08-09T12:56:34.521+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 27ef58cc88fc:34447 (size: 15.6 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:34.522+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1585
+[2024-08-09T12:56:34.523+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[9] at rdd at EsSparkSQL.scala:103) (first 15 tasks are for partitions Vector(0))
+[2024-08-09T12:56:34.523+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2024-08-09T12:56:34.525+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (172.18.0.6, executor 0, partition 0, PROCESS_LOCAL, 8427 bytes)
+[2024-08-09T12:56:34.632+0000] {subprocess.py:93} INFO - 24/08/09 12:56:34 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.18.0.6:34823 (size: 15.6 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:35.954+0000] {subprocess.py:93} INFO - 24/08/09 12:56:35 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.18.0.6:34823 (size: 34.7 KiB, free: 1458.4 MiB)
+[2024-08-09T12:56:36.196+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 WARN TaskSetManager: Lost task 0.0 in stage 1.0 (TID 1) (172.18.0.6 executor 0): org.elasticsearch.hadoop.serialization.EsHadoopSerializationException: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.197+0000] {subprocess.py:93} INFO -  at [Source: [B@471e29c9; line: 1, column: 2]
+[2024-08-09T12:56:36.198+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:95)
+[2024-08-09T12:56:36.201+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.doFind(ParsingUtils.java:165)
+[2024-08-09T12:56:36.202+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.values(ParsingUtils.java:151)
+[2024-08-09T12:56:36.203+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.field.JsonFieldExtractors.process(JsonFieldExtractors.java:213)
+[2024-08-09T12:56:36.203+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.JsonTemplatedBulk.preProcess(JsonTemplatedBulk.java:64)
+[2024-08-09T12:56:36.204+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.TemplatedBulk.write(TemplatedBulk.java:54)
+[2024-08-09T12:56:36.205+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.BulkEntryWriter.writeBulkEntry(BulkEntryWriter.java:68)
+[2024-08-09T12:56:36.205+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.rest.RestRepository.writeToIndex(RestRepository.java:170)
+[2024-08-09T12:56:36.206+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.rdd.EsRDDWriter.write(EsRDDWriter.scala:83)
+[2024-08-09T12:56:36.206+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.206+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1$adapted(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.207+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T12:56:36.207+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T12:56:36.207+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T12:56:36.207+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T12:56:36.208+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T12:56:36.208+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T12:56:36.208+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T12:56:36.208+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T12:56:36.208+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T12:56:36.209+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T12:56:36.209+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T12:56:36.214+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.219+0000] {subprocess.py:93} INFO -  at [Source: [B@471e29c9; line: 1, column: 2]
+[2024-08-09T12:56:36.220+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParser._constructError(JsonParser.java:1291)
+[2024-08-09T12:56:36.220+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)
+[2024-08-09T12:56:36.228+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)
+[2024-08-09T12:56:36.228+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._handleUnexpectedValue(Utf8StreamParser.java:1582)
+[2024-08-09T12:56:36.229+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._nextTokenNotInObject(Utf8StreamParser.java:437)
+[2024-08-09T12:56:36.229+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:323)
+[2024-08-09T12:56:36.230+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:93)
+[2024-08-09T12:56:36.230+0000] {subprocess.py:93} INFO - 	... 21 more
+[2024-08-09T12:56:36.231+0000] {subprocess.py:93} INFO - 
+[2024-08-09T12:56:36.234+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO TaskSetManager: Starting task 0.1 in stage 1.0 (TID 2) (172.18.0.6, executor 0, partition 0, PROCESS_LOCAL, 8427 bytes)
+[2024-08-09T12:56:36.327+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 WARN TaskSetManager: Lost task 0.1 in stage 1.0 (TID 2) (172.18.0.6 executor 0): org.elasticsearch.hadoop.serialization.EsHadoopSerializationException: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.330+0000] {subprocess.py:93} INFO -  at [Source: [B@7a95be0; line: 1, column: 2]
+[2024-08-09T12:56:36.331+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:95)
+[2024-08-09T12:56:36.331+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.doFind(ParsingUtils.java:165)
+[2024-08-09T12:56:36.331+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.values(ParsingUtils.java:151)
+[2024-08-09T12:56:36.332+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.field.JsonFieldExtractors.process(JsonFieldExtractors.java:213)
+[2024-08-09T12:56:36.332+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.JsonTemplatedBulk.preProcess(JsonTemplatedBulk.java:64)
+[2024-08-09T12:56:36.333+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.TemplatedBulk.write(TemplatedBulk.java:54)
+[2024-08-09T12:56:36.333+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.BulkEntryWriter.writeBulkEntry(BulkEntryWriter.java:68)
+[2024-08-09T12:56:36.333+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.rest.RestRepository.writeToIndex(RestRepository.java:170)
+[2024-08-09T12:56:36.334+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.rdd.EsRDDWriter.write(EsRDDWriter.scala:83)
+[2024-08-09T12:56:36.334+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.334+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1$adapted(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.335+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T12:56:36.335+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T12:56:36.335+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T12:56:36.335+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T12:56:36.336+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T12:56:36.336+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T12:56:36.336+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T12:56:36.336+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T12:56:36.337+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T12:56:36.337+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T12:56:36.337+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T12:56:36.338+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.338+0000] {subprocess.py:93} INFO -  at [Source: [B@7a95be0; line: 1, column: 2]
+[2024-08-09T12:56:36.338+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParser._constructError(JsonParser.java:1291)
+[2024-08-09T12:56:36.338+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)
+[2024-08-09T12:56:36.339+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)
+[2024-08-09T12:56:36.339+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._handleUnexpectedValue(Utf8StreamParser.java:1582)
+[2024-08-09T12:56:36.339+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._nextTokenNotInObject(Utf8StreamParser.java:437)
+[2024-08-09T12:56:36.339+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:323)
+[2024-08-09T12:56:36.340+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:93)
+[2024-08-09T12:56:36.340+0000] {subprocess.py:93} INFO - 	... 21 more
+[2024-08-09T12:56:36.340+0000] {subprocess.py:93} INFO - 
+[2024-08-09T12:56:36.341+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO TaskSetManager: Starting task 0.2 in stage 1.0 (TID 3) (172.18.0.6, executor 0, partition 0, PROCESS_LOCAL, 8427 bytes)
+[2024-08-09T12:56:36.382+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 WARN TaskSetManager: Lost task 0.2 in stage 1.0 (TID 3) (172.18.0.6 executor 0): org.elasticsearch.hadoop.serialization.EsHadoopSerializationException: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.383+0000] {subprocess.py:93} INFO -  at [Source: [B@7f8300b1; line: 1, column: 2]
+[2024-08-09T12:56:36.384+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:95)
+[2024-08-09T12:56:36.384+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.doFind(ParsingUtils.java:165)
+[2024-08-09T12:56:36.384+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.values(ParsingUtils.java:151)
+[2024-08-09T12:56:36.385+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.field.JsonFieldExtractors.process(JsonFieldExtractors.java:213)
+[2024-08-09T12:56:36.385+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.JsonTemplatedBulk.preProcess(JsonTemplatedBulk.java:64)
+[2024-08-09T12:56:36.386+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.TemplatedBulk.write(TemplatedBulk.java:54)
+[2024-08-09T12:56:36.386+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.BulkEntryWriter.writeBulkEntry(BulkEntryWriter.java:68)
+[2024-08-09T12:56:36.386+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.rest.RestRepository.writeToIndex(RestRepository.java:170)
+[2024-08-09T12:56:36.386+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.rdd.EsRDDWriter.write(EsRDDWriter.scala:83)
+[2024-08-09T12:56:36.386+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.386+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1$adapted(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T12:56:36.387+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T12:56:36.388+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T12:56:36.388+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T12:56:36.388+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.388+0000] {subprocess.py:93} INFO -  at [Source: [B@7f8300b1; line: 1, column: 2]
+[2024-08-09T12:56:36.389+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParser._constructError(JsonParser.java:1291)
+[2024-08-09T12:56:36.389+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)
+[2024-08-09T12:56:36.389+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)
+[2024-08-09T12:56:36.390+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._handleUnexpectedValue(Utf8StreamParser.java:1582)
+[2024-08-09T12:56:36.391+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._nextTokenNotInObject(Utf8StreamParser.java:437)
+[2024-08-09T12:56:36.392+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:323)
+[2024-08-09T12:56:36.392+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:93)
+[2024-08-09T12:56:36.392+0000] {subprocess.py:93} INFO - 	... 21 more
+[2024-08-09T12:56:36.393+0000] {subprocess.py:93} INFO - 
+[2024-08-09T12:56:36.393+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO TaskSetManager: Starting task 0.3 in stage 1.0 (TID 4) (172.18.0.6, executor 0, partition 0, PROCESS_LOCAL, 8427 bytes)
+[2024-08-09T12:56:36.432+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 WARN TaskSetManager: Lost task 0.3 in stage 1.0 (TID 4) (172.18.0.6 executor 0): org.elasticsearch.hadoop.serialization.EsHadoopSerializationException: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.433+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.433+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:95)
+[2024-08-09T12:56:36.433+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.doFind(ParsingUtils.java:165)
+[2024-08-09T12:56:36.434+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.values(ParsingUtils.java:151)
+[2024-08-09T12:56:36.434+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.field.JsonFieldExtractors.process(JsonFieldExtractors.java:213)
+[2024-08-09T12:56:36.434+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.JsonTemplatedBulk.preProcess(JsonTemplatedBulk.java:64)
+[2024-08-09T12:56:36.434+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.TemplatedBulk.write(TemplatedBulk.java:54)
+[2024-08-09T12:56:36.434+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.BulkEntryWriter.writeBulkEntry(BulkEntryWriter.java:68)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.rest.RestRepository.writeToIndex(RestRepository.java:170)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.rdd.EsRDDWriter.write(EsRDDWriter.scala:83)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1$adapted(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T12:56:36.435+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T12:56:36.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T12:56:36.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T12:56:36.436+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T12:56:36.436+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T12:56:36.436+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T12:56:36.437+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T12:56:36.437+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.437+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.437+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParser._constructError(JsonParser.java:1291)
+[2024-08-09T12:56:36.437+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)
+[2024-08-09T12:56:36.437+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)
+[2024-08-09T12:56:36.438+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._handleUnexpectedValue(Utf8StreamParser.java:1582)
+[2024-08-09T12:56:36.438+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._nextTokenNotInObject(Utf8StreamParser.java:437)
+[2024-08-09T12:56:36.439+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:323)
+[2024-08-09T12:56:36.439+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:93)
+[2024-08-09T12:56:36.440+0000] {subprocess.py:93} INFO - 	... 21 more
+[2024-08-09T12:56:36.442+0000] {subprocess.py:93} INFO - 
+[2024-08-09T12:56:36.444+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 ERROR TaskSetManager: Task 0 in stage 1.0 failed 4 times; aborting job
+[2024-08-09T12:56:36.444+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2024-08-09T12:56:36.444+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO TaskSchedulerImpl: Cancelling stage 1
+[2024-08-09T12:56:36.444+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage cancelled: Job aborted due to stage failure: Task 0 in stage 1.0 failed 4 times, most recent failure: Lost task 0.3 in stage 1.0 (TID 4) (172.18.0.6 executor 0): org.elasticsearch.hadoop.serialization.EsHadoopSerializationException: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:95)
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.doFind(ParsingUtils.java:165)
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.values(ParsingUtils.java:151)
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.field.JsonFieldExtractors.process(JsonFieldExtractors.java:213)
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.JsonTemplatedBulk.preProcess(JsonTemplatedBulk.java:64)
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.TemplatedBulk.write(TemplatedBulk.java:54)
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.BulkEntryWriter.writeBulkEntry(BulkEntryWriter.java:68)
+[2024-08-09T12:56:36.445+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.rest.RestRepository.writeToIndex(RestRepository.java:170)
+[2024-08-09T12:56:36.446+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.rdd.EsRDDWriter.write(EsRDDWriter.scala:83)
+[2024-08-09T12:56:36.447+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.448+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1$adapted(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.449+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T12:56:36.450+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T12:56:36.451+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T12:56:36.452+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParser._constructError(JsonParser.java:1291)
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._handleUnexpectedValue(Utf8StreamParser.java:1582)
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._nextTokenNotInObject(Utf8StreamParser.java:437)
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:323)
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:93)
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 	... 21 more
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - 
+[2024-08-09T12:56:36.453+0000] {subprocess.py:93} INFO - Driver stacktrace:
+[2024-08-09T12:56:36.455+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO DAGScheduler: ResultStage 1 (runJob at EsSparkSQL.scala:103) failed in 1.943 s due to Job aborted due to stage failure: Task 0 in stage 1.0 failed 4 times, most recent failure: Lost task 0.3 in stage 1.0 (TID 4) (172.18.0.6 executor 0): org.elasticsearch.hadoop.serialization.EsHadoopSerializationException: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.456+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.456+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:95)
+[2024-08-09T12:56:36.456+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.doFind(ParsingUtils.java:165)
+[2024-08-09T12:56:36.456+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.values(ParsingUtils.java:151)
+[2024-08-09T12:56:36.456+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.field.JsonFieldExtractors.process(JsonFieldExtractors.java:213)
+[2024-08-09T12:56:36.456+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.JsonTemplatedBulk.preProcess(JsonTemplatedBulk.java:64)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.TemplatedBulk.write(TemplatedBulk.java:54)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.BulkEntryWriter.writeBulkEntry(BulkEntryWriter.java:68)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.rest.RestRepository.writeToIndex(RestRepository.java:170)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.rdd.EsRDDWriter.write(EsRDDWriter.scala:83)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1$adapted(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T12:56:36.457+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T12:56:36.458+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T12:56:36.458+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T12:56:36.459+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T12:56:36.461+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T12:56:36.463+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T12:56:36.464+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T12:56:36.467+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T12:56:36.467+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T12:56:36.469+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.471+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.472+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParser._constructError(JsonParser.java:1291)
+[2024-08-09T12:56:36.475+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)
+[2024-08-09T12:56:36.476+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)
+[2024-08-09T12:56:36.477+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._handleUnexpectedValue(Utf8StreamParser.java:1582)
+[2024-08-09T12:56:36.480+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._nextTokenNotInObject(Utf8StreamParser.java:437)
+[2024-08-09T12:56:36.483+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:323)
+[2024-08-09T12:56:36.484+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:93)
+[2024-08-09T12:56:36.485+0000] {subprocess.py:93} INFO - 	... 21 more
+[2024-08-09T12:56:36.486+0000] {subprocess.py:93} INFO - 
+[2024-08-09T12:56:36.487+0000] {subprocess.py:93} INFO - Driver stacktrace:
+[2024-08-09T12:56:36.488+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO DAGScheduler: Job 1 failed: runJob at EsSparkSQL.scala:103, took 1.952436 s
+[2024-08-09T12:56:36.598+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-08-09T12:56:36.599+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/process_data.py", line 97, in <module>
+[2024-08-09T12:56:36.599+0000] {subprocess.py:93} INFO -     save_to_elasticsearch(processed_market_trends, "market_trends")
+[2024-08-09T12:56:36.599+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/process_data.py", line 88, in save_to_elasticsearch
+[2024-08-09T12:56:36.600+0000] {subprocess.py:93} INFO -     df.write.format("org.elasticsearch.spark.sql").options(**es_write_conf).mode("overwrite").save()
+[2024-08-09T12:56:36.600+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1461, in save
+[2024-08-09T12:56:36.600+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-08-09T12:56:36.600+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2024-08-09T12:56:36.601+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2024-08-09T12:56:36.642+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o51.save.
+[2024-08-09T12:56:36.642+0000] {subprocess.py:93} INFO - : org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 1.0 failed 4 times, most recent failure: Lost task 0.3 in stage 1.0 (TID 4) (172.18.0.6 executor 0): org.elasticsearch.hadoop.serialization.EsHadoopSerializationException: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.643+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.643+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:95)
+[2024-08-09T12:56:36.643+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.doFind(ParsingUtils.java:165)
+[2024-08-09T12:56:36.643+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.values(ParsingUtils.java:151)
+[2024-08-09T12:56:36.643+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.field.JsonFieldExtractors.process(JsonFieldExtractors.java:213)
+[2024-08-09T12:56:36.644+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.JsonTemplatedBulk.preProcess(JsonTemplatedBulk.java:64)
+[2024-08-09T12:56:36.644+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.TemplatedBulk.write(TemplatedBulk.java:54)
+[2024-08-09T12:56:36.644+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.BulkEntryWriter.writeBulkEntry(BulkEntryWriter.java:68)
+[2024-08-09T12:56:36.644+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.rest.RestRepository.writeToIndex(RestRepository.java:170)
+[2024-08-09T12:56:36.644+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.rdd.EsRDDWriter.write(EsRDDWriter.scala:83)
+[2024-08-09T12:56:36.644+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.645+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1$adapted(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.645+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T12:56:36.645+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T12:56:36.645+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T12:56:36.645+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T12:56:36.645+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T12:56:36.646+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T12:56:36.646+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T12:56:36.646+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T12:56:36.646+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T12:56:36.646+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T12:56:36.646+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T12:56:36.646+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.646+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.647+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParser._constructError(JsonParser.java:1291)
+[2024-08-09T12:56:36.647+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)
+[2024-08-09T12:56:36.647+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)
+[2024-08-09T12:56:36.647+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._handleUnexpectedValue(Utf8StreamParser.java:1582)
+[2024-08-09T12:56:36.647+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._nextTokenNotInObject(Utf8StreamParser.java:437)
+[2024-08-09T12:56:36.647+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:323)
+[2024-08-09T12:56:36.647+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:93)
+[2024-08-09T12:56:36.647+0000] {subprocess.py:93} INFO - 	... 21 more
+[2024-08-09T12:56:36.648+0000] {subprocess.py:93} INFO - 
+[2024-08-09T12:56:36.648+0000] {subprocess.py:93} INFO - Driver stacktrace:
+[2024-08-09T12:56:36.648+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+[2024-08-09T12:56:36.648+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+[2024-08-09T12:56:36.648+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+[2024-08-09T12:56:36.648+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-08-09T12:56:36.648+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-08-09T12:56:36.649+0000] {subprocess.py:93} INFO - 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-08-09T12:56:36.649+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+[2024-08-09T12:56:36.649+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+[2024-08-09T12:56:36.649+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+[2024-08-09T12:56:36.649+0000] {subprocess.py:93} INFO - 	at scala.Option.foreach(Option.scala:407)
+[2024-08-09T12:56:36.649+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+[2024-08-09T12:56:36.649+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+[2024-08-09T12:56:36.650+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+[2024-08-09T12:56:36.650+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+[2024-08-09T12:56:36.650+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-08-09T12:56:36.650+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+[2024-08-09T12:56:36.650+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+[2024-08-09T12:56:36.650+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2419)
+[2024-08-09T12:56:36.650+0000] {subprocess.py:93} INFO - 	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2451)
+[2024-08-09T12:56:36.651+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.saveToEs(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.651+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.ElasticsearchRelation.insert(DefaultSource.scala:629)
+[2024-08-09T12:56:36.651+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.DefaultSource.createRelation(DefaultSource.scala:108)
+[2024-08-09T12:56:36.651+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:48)
+[2024-08-09T12:56:36.651+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+[2024-08-09T12:56:36.651+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+[2024-08-09T12:56:36.651+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+[2024-08-09T12:56:36.651+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+[2024-08-09T12:56:36.652+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+[2024-08-09T12:56:36.653+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:859)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:388)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:361)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:248)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2024-08-09T12:56:36.654+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:829)
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.serialization.EsHadoopSerializationException: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO -  at [Source: [B@3a886aa4; line: 1, column: 2]
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:95)
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.doFind(ParsingUtils.java:165)
+[2024-08-09T12:56:36.655+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.ParsingUtils.values(ParsingUtils.java:151)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.field.JsonFieldExtractors.process(JsonFieldExtractors.java:213)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.JsonTemplatedBulk.preProcess(JsonTemplatedBulk.java:64)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.TemplatedBulk.write(TemplatedBulk.java:54)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.bulk.BulkEntryWriter.writeBulkEntry(BulkEntryWriter.java:68)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.rest.RestRepository.writeToIndex(RestRepository.java:170)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.rdd.EsRDDWriter.write(EsRDDWriter.scala:83)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.spark.sql.EsSparkSQL$.$anonfun$saveToEs$1$adapted(EsSparkSQL.scala:103)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+[2024-08-09T12:56:36.656+0000] {subprocess.py:93} INFO - 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+[2024-08-09T12:56:36.657+0000] {subprocess.py:93} INFO - 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+[2024-08-09T12:56:36.657+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+[2024-08-09T12:56:36.657+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+[2024-08-09T12:56:36.657+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+[2024-08-09T12:56:36.657+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+[2024-08-09T12:56:36.657+0000] {subprocess.py:93} INFO - 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+[2024-08-09T12:56:36.657+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-08-09T12:56:36.657+0000] {subprocess.py:93} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-08-09T12:56:36.658+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-08-09T12:56:36.658+0000] {subprocess.py:93} INFO - Caused by: org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParseException: Unexpected character ('(' (code 40)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+[2024-08-09T12:56:36.658+0000] {subprocess.py:93} INFO -  at [Source: [B@49480f56; line: 1, column: 2]
+[2024-08-09T12:56:36.658+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.JsonParser._constructError(JsonParser.java:1291)
+[2024-08-09T12:56:36.658+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)
+[2024-08-09T12:56:36.658+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)
+[2024-08-09T12:56:36.659+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._handleUnexpectedValue(Utf8StreamParser.java:1582)
+[2024-08-09T12:56:36.659+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser._nextTokenNotInObject(Utf8StreamParser.java:437)
+[2024-08-09T12:56:36.659+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.thirdparty.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:323)
+[2024-08-09T12:56:36.659+0000] {subprocess.py:93} INFO - 	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.nextToken(JacksonJsonParser.java:93)
+[2024-08-09T12:56:36.659+0000] {subprocess.py:93} INFO - 	... 21 more
+[2024-08-09T12:56:36.659+0000] {subprocess.py:93} INFO - 
+[2024-08-09T12:56:36.695+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-08-09T12:56:36.695+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-08-09T12:56:36.703+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO SparkUI: Stopped Spark web UI at http://27ef58cc88fc:4040
+[2024-08-09T12:56:36.708+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-08-09T12:56:36.709+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-08-09T12:56:36.765+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-08-09T12:56:36.784+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO MemoryStore: MemoryStore cleared
+[2024-08-09T12:56:36.785+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO BlockManager: BlockManager stopped
+[2024-08-09T12:56:36.790+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-08-09T12:56:36.795+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-08-09T12:56:36.803+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO SparkContext: Successfully stopped SparkContext
+[2024-08-09T12:56:36.803+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO ShutdownHookManager: Shutdown hook called
+[2024-08-09T12:56:36.803+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-58b706d6-59fc-40a1-aeb8-43fe4eb6916c/pyspark-eaf4f360-9cdc-4c44-9097-2d702714ba29
+[2024-08-09T12:56:36.806+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-b9042c6b-1f6b-4bed-8657-76b61078ba7e
+[2024-08-09T12:56:36.808+0000] {subprocess.py:93} INFO - 24/08/09 12:56:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-58b706d6-59fc-40a1-aeb8-43fe4eb6916c
+[2024-08-09T12:56:36.851+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-08-09T12:56:36.871+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-08-09T12:56:36.875+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=data_pipeline_api, task_id=process_data, execution_date=20240808T003000, start_date=20240809T125628, end_date=20240809T125636
+[2024-08-09T12:56:36.886+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 7 for task process_data (Bash command failed. The command returned a non-zero exit code 1.; 1070)
+[2024-08-09T12:56:36.926+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-08-09T12:56:36.955+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

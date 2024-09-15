@@ -1,0 +1,23 @@
+[2024-07-25T00:39:24.394+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline.process_data scheduled__2024-07-24T00:30:00+00:00 [queued]>
+[2024-07-25T00:39:24.398+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline.process_data scheduled__2024-07-24T00:30:00+00:00 [queued]>
+[2024-07-25T00:39:24.398+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2024-07-25T00:39:24.403+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): process_data> on 2024-07-24 00:30:00+00:00
+[2024-07-25T00:39:24.405+0000] {standard_task_runner.py:57} INFO - Started process 22236 to run task
+[2024-07-25T00:39:24.407+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline', 'process_data', 'scheduled__2024-07-24T00:30:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/spark-jobs.py', '--cfg-path', '/tmp/tmpf2s39sde']
+[2024-07-25T00:39:24.409+0000] {standard_task_runner.py:85} INFO - Job 52: Subtask process_data
+[2024-07-25T00:39:24.433+0000] {task_command.py:415} INFO - Running <TaskInstance: data_pipeline.process_data scheduled__2024-07-24T00:30:00+00:00 [running]> on host c553c98b8e80
+[2024-07-25T00:39:24.461+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline' AIRFLOW_CTX_TASK_ID='process_data' AIRFLOW_CTX_EXECUTION_DATE='2024-07-24T00:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-24T00:30:00+00:00'
+[2024-07-25T00:39:24.462+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-07-25T00:39:24.462+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/jobs/process_data.py ']
+[2024-07-25T00:39:24.466+0000] {subprocess.py:86} INFO - Output:
+[2024-07-25T00:39:24.501+0000] {subprocess.py:93} INFO - python: can't open file '/opt/***/jobs/process_data.py': [Errno 2] No such file or directory
+[2024-07-25T00:39:24.504+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2024-07-25T00:39:24.511+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2024-07-25T00:39:24.512+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=data_pipeline, task_id=process_data, execution_date=20240724T003000, start_date=20240725T003924, end_date=20240725T003924
+[2024-07-25T00:39:24.517+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 52 for task process_data (Bash command failed. The command returned a non-zero exit code 2.; 22236)
+[2024-07-25T00:39:24.549+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-07-25T00:39:24.561+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,35 @@
+[2024-08-08T09:25:19.980+0000] {processor.py:157} INFO - Started process (PID=200) to work on /opt/airflow/dags/spark-test.py
+[2024-08-08T09:25:19.981+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark-test.py for tasks to queue
+[2024-08-08T09:25:19.987+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:25:19.987+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:25:19.998+0000] {processor.py:839} INFO - DAG(s) dict_keys(['hello-world']) retrieved from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:25:20.014+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:25:20.013+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-08-08T09:25:20.043+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:25:20.043+0000] {dag.py:3696} INFO - Setting next_dagrun for hello-world to 2024-08-08T00:00:00+00:00, run_after=2024-08-09T00:00:00+00:00
+[2024-08-08T09:25:20.066+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark-test.py took 0.088 seconds
+[2024-08-08T09:25:50.607+0000] {processor.py:157} INFO - Started process (PID=1031) to work on /opt/airflow/dags/spark-test.py
+[2024-08-08T09:25:50.608+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark-test.py for tasks to queue
+[2024-08-08T09:25:50.609+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:25:50.609+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:25:50.617+0000] {processor.py:839} INFO - DAG(s) dict_keys(['hello-world']) retrieved from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:25:50.636+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:25:50.635+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-08-08T09:25:50.648+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:25:50.648+0000] {dag.py:3696} INFO - Setting next_dagrun for hello-world to 2024-08-08T00:00:00+00:00, run_after=2024-08-09T00:00:00+00:00
+[2024-08-08T09:25:50.658+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark-test.py took 0.052 seconds
+[2024-08-08T09:26:21.184+0000] {processor.py:157} INFO - Started process (PID=1056) to work on /opt/airflow/dags/spark-test.py
+[2024-08-08T09:26:21.184+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark-test.py for tasks to queue
+[2024-08-08T09:26:21.185+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:26:21.185+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:26:21.195+0000] {processor.py:839} INFO - DAG(s) dict_keys(['hello-world']) retrieved from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:26:21.217+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:26:21.217+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-08-08T09:26:21.225+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:26:21.225+0000] {dag.py:3696} INFO - Setting next_dagrun for hello-world to 2024-08-08T00:00:00+00:00, run_after=2024-08-09T00:00:00+00:00
+[2024-08-08T09:26:21.234+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark-test.py took 0.052 seconds
+[2024-08-08T09:26:51.777+0000] {processor.py:157} INFO - Started process (PID=1081) to work on /opt/airflow/dags/spark-test.py
+[2024-08-08T09:26:51.778+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark-test.py for tasks to queue
+[2024-08-08T09:26:51.784+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:26:51.783+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:26:51.798+0000] {processor.py:839} INFO - DAG(s) dict_keys(['hello-world']) retrieved from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:26:51.816+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:26:51.816+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-08-08T09:26:51.826+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:26:51.826+0000] {dag.py:3696} INFO - Setting next_dagrun for hello-world to 2024-08-08T00:00:00+00:00, run_after=2024-08-09T00:00:00+00:00
+[2024-08-08T09:26:51.832+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark-test.py took 0.057 seconds
+[2024-08-08T09:27:22.477+0000] {processor.py:157} INFO - Started process (PID=1106) to work on /opt/airflow/dags/spark-test.py
+[2024-08-08T09:27:22.477+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark-test.py for tasks to queue
+[2024-08-08T09:27:22.478+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:27:22.478+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:27:22.487+0000] {processor.py:839} INFO - DAG(s) dict_keys(['hello-world']) retrieved from /opt/airflow/dags/spark-test.py
+[2024-08-08T09:27:22.499+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:27:22.499+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-08-08T09:27:22.508+0000] {logging_mixin.py:151} INFO - [2024-08-08T09:27:22.508+0000] {dag.py:3696} INFO - Setting next_dagrun for hello-world to 2024-08-08T00:00:00+00:00, run_after=2024-08-09T00:00:00+00:00
+[2024-08-08T09:27:22.517+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark-test.py took 0.042 seconds
