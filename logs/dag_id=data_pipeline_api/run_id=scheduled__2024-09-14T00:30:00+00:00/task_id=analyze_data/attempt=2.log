@@ -1,0 +1,100 @@
+[2024-09-15T01:17:03.639+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline_api.analyze_data scheduled__2024-09-14T00:30:00+00:00 [queued]>
+[2024-09-15T01:17:03.648+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline_api.analyze_data scheduled__2024-09-14T00:30:00+00:00 [queued]>
+[2024-09-15T01:17:03.649+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2024-09-15T01:17:03.659+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): analyze_data> on 2024-09-14 00:30:00+00:00
+[2024-09-15T01:17:03.666+0000] {standard_task_runner.py:57} INFO - Started process 856 to run task
+[2024-09-15T01:17:03.668+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline_api', 'analyze_data', 'scheduled__2024-09-14T00:30:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/spark-jobs.py', '--cfg-path', '/tmp/tmph393boko']
+[2024-09-15T01:17:03.671+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask analyze_data
+[2024-09-15T01:17:03.742+0000] {task_command.py:415} INFO - Running <TaskInstance: data_pipeline_api.analyze_data scheduled__2024-09-14T00:30:00+00:00 [running]> on host 595e69e30fc0
+[2024-09-15T01:17:03.789+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline_api' AIRFLOW_CTX_TASK_ID='analyze_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-14T00:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-14T00:30:00+00:00'
+[2024-09-15T01:17:03.791+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-15T01:17:03.792+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'bash /opt/***/jobs/spark-submit.sh /opt/***/jobs/analyze_data.py ']
+[2024-09-15T01:17:03.798+0000] {subprocess.py:86} INFO - Output:
+[2024-09-15T01:17:03.807+0000] {subprocess.py:93} INFO - /opt/***/jobs/analyze_data.py
+[2024-09-15T01:17:03.877+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-09-15T01:17:05.112+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-09-15T01:17:05.752+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SparkContext: Running Spark version 3.5.1
+[2024-09-15T01:17:05.752+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SparkContext: OS info Linux, 6.6.32-linuxkit, aarch64
+[2024-09-15T01:17:05.752+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SparkContext: Java version 11.0.23
+[2024-09-15T01:17:05.767+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO ResourceUtils: ==============================================================
+[2024-09-15T01:17:05.767+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-09-15T01:17:05.767+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO ResourceUtils: ==============================================================
+[2024-09-15T01:17:05.767+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SparkContext: Submitted application: FinanceDataAnalysis
+[2024-09-15T01:17:05.778+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 1024, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-09-15T01:17:05.783+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2024-09-15T01:17:05.784+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-09-15T01:17:05.822+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SecurityManager: Changing view acls to: ***
+[2024-09-15T01:17:05.822+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SecurityManager: Changing modify acls to: ***
+[2024-09-15T01:17:05.823+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SecurityManager: Changing view acls groups to:
+[2024-09-15T01:17:05.823+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SecurityManager: Changing modify acls groups to:
+[2024-09-15T01:17:05.823+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-09-15T01:17:05.940+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO Utils: Successfully started service 'sparkDriver' on port 35375.
+[2024-09-15T01:17:05.955+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SparkEnv: Registering MapOutputTracker
+[2024-09-15T01:17:05.973+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SparkEnv: Registering BlockManagerMaster
+[2024-09-15T01:17:05.981+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-09-15T01:17:05.982+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-09-15T01:17:05.983+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-09-15T01:17:05.994+0000] {subprocess.py:93} INFO - 24/09/15 01:17:05 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-c4f57b78-3606-4699-80ed-9b5330e03534
+[2024-09-15T01:17:06.000+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO MemoryStore: MemoryStore started with capacity 1458.4 MiB
+[2024-09-15T01:17:06.013+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-09-15T01:17:06.119+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-09-15T01:17:06.150+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-09-15T01:17:06.168+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO SparkContext: Added JAR file:///opt/bitnami/spark/resources/elasticsearch-spark-30_2.12-8.4.3.jar at spark://595e69e30fc0:35375/jars/elasticsearch-spark-30_2.12-8.4.3.jar with timestamp 1726363025747
+[2024-09-15T01:17:06.203+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2024-09-15T01:17:06.231+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 17 ms (0 ms spent in bootstraps)
+[2024-09-15T01:17:06.301+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20240915011706-0002
+[2024-09-15T01:17:06.307+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37001.
+[2024-09-15T01:17:06.308+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO NettyBlockTransferService: Server created on 595e69e30fc0:37001
+[2024-09-15T01:17:06.308+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240915011706-0002/0 on worker-20240915011145-172.18.0.8-40123 (172.18.0.8:40123) with 1 core(s)
+[2024-09-15T01:17:06.309+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-09-15T01:17:06.310+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneSchedulerBackend: Granted executor ID app-20240915011706-0002/0 on hostPort 172.18.0.8:40123 with 1 core(s), 1024.0 MiB RAM
+[2024-09-15T01:17:06.310+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20240915011706-0002/1 on worker-20240915011145-172.18.0.9-43093 (172.18.0.9:43093) with 1 core(s)
+[2024-09-15T01:17:06.311+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneSchedulerBackend: Granted executor ID app-20240915011706-0002/1 on hostPort 172.18.0.9:43093 with 1 core(s), 1024.0 MiB RAM
+[2024-09-15T01:17:06.315+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 595e69e30fc0, 37001, None)
+[2024-09-15T01:17:06.318+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO BlockManagerMasterEndpoint: Registering block manager 595e69e30fc0:37001 with 1458.4 MiB RAM, BlockManagerId(driver, 595e69e30fc0, 37001, None)
+[2024-09-15T01:17:06.321+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 595e69e30fc0, 37001, None)
+[2024-09-15T01:17:06.322+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 595e69e30fc0, 37001, None)
+[2024-09-15T01:17:06.412+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240915011706-0002/1 is now RUNNING
+[2024-09-15T01:17:06.415+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20240915011706-0002/0 is now RUNNING
+[2024-09-15T01:17:06.496+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-09-15T01:17:06.602+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-09-15T01:17:06.603+0000] {subprocess.py:93} INFO - 24/09/15 01:17:06 INFO SharedState: Warehouse path is 'file:/tmp/***tmphyipviz6/spark-warehouse'.
+[2024-09-15T01:17:07.417+0000] {subprocess.py:93} INFO - 24/09/15 01:17:07 INFO Version: Elasticsearch Hadoop v8.4.3 [a7873eb469]
+[2024-09-15T01:17:08.430+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.9:53026) with ID 1,  ResourceProfileId 0
+[2024-09-15T01:17:08.438+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.8:52258) with ID 0,  ResourceProfileId 0
+[2024-09-15T01:17:08.486+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.9:42395 with 1458.4 MiB RAM, BlockManagerId(1, 172.18.0.9, 42395, None)
+[2024-09-15T01:17:08.489+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.8:39579 with 1458.4 MiB RAM, BlockManagerId(0, 172.18.0.8, 39579, None)
+[2024-09-15T01:17:08.883+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-09-15T01:17:08.883+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/analyze_data.py", line 48, in <module>
+[2024-09-15T01:17:08.884+0000] {subprocess.py:93} INFO -     save_analysis_result(top_gainers, "data/top_gainers.csv")
+[2024-09-15T01:17:08.884+0000] {subprocess.py:93} INFO -   File "/opt/***/jobs/analyze_data.py", line 41, in save_analysis_result
+[2024-09-15T01:17:08.884+0000] {subprocess.py:93} INFO -     df.coalesce(1).write.mode("overwrite").csv(file_path, header=True)
+[2024-09-15T01:17:08.884+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1864, in csv
+[2024-09-15T01:17:08.884+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-09-15T01:17:08.885+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+[2024-09-15T01:17:08.887+0000] {subprocess.py:93} INFO - pyspark.errors.exceptions.captured.AnalysisException: [UNSUPPORTED_DATA_TYPE_FOR_DATASOURCE] The CSV datasource doesn't support the column `_metadata` of the type "MAP<STRING, STRING>".
+[2024-09-15T01:17:08.911+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-09-15T01:17:08.913+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-09-15T01:17:08.918+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO SparkUI: Stopped Spark web UI at http://595e69e30fc0:4040
+[2024-09-15T01:17:08.922+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-09-15T01:17:08.922+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-09-15T01:17:08.943+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-09-15T01:17:08.964+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO MemoryStore: MemoryStore cleared
+[2024-09-15T01:17:08.965+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO BlockManager: BlockManager stopped
+[2024-09-15T01:17:08.968+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-09-15T01:17:08.970+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-09-15T01:17:08.977+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO SparkContext: Successfully stopped SparkContext
+[2024-09-15T01:17:08.980+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO ShutdownHookManager: Shutdown hook called
+[2024-09-15T01:17:08.980+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-25697cbf-a7a2-480d-9d80-e5cda3bf4319
+[2024-09-15T01:17:08.985+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-25697cbf-a7a2-480d-9d80-e5cda3bf4319/pyspark-e6b7fb36-7404-4a64-91ff-4dff1590b0fe
+[2024-09-15T01:17:08.989+0000] {subprocess.py:93} INFO - 24/09/15 01:17:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-8a176b5b-d73e-4806-9bd5-f8d8b4dd44f0
+[2024-09-15T01:17:09.015+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-09-15T01:17:09.025+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-09-15T01:17:09.028+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=data_pipeline_api, task_id=analyze_data, execution_date=20240914T003000, start_date=20240915T011703, end_date=20240915T011709
+[2024-09-15T01:17:09.035+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 5 for task analyze_data (Bash command failed. The command returned a non-zero exit code 1.; 856)
+[2024-09-15T01:17:09.072+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-15T01:17:09.084+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

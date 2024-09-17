@@ -38,17 +38,21 @@ def analyze_stock_time_series(data):
     return price_analysis, volume_analysis
 
 def save_analysis_result(df, file_path):
-    df.coalesce(1).write.mode("overwrite").csv(file_path, header=True)
+    # '_metadata' 열 제거
+    if '_metadata' in df.columns:
+        df = df.drop('_metadata')
+        
+    df.coalesce(1).write.mode("overwrite").option("header", "true").csv(file_path)
 
 if __name__ == "__main__":
     spark = SparkSession.builder.appName("FinanceDataAnalysis").getOrCreate()
     
     market_trends = load_data_from_elasticsearch(spark, "market_trends")
     top_gainers, top_losers = analyze_market_trends(market_trends)
-    save_analysis_result(top_gainers, "data/top_gainers.csv")
-    save_analysis_result(top_losers, "data/top_losers.csv")
+    save_analysis_result(top_gainers, "/opt/bitnami/spark/data/top_gainers.csv")
+    save_analysis_result(top_losers, "/opt/bitnami/spark/data//top_losers.csv")
 
     stock_time_series = load_data_from_elasticsearch(spark, "stock_time_series")
     price_analysis, volume_analysis = analyze_stock_time_series(stock_time_series)
-    save_analysis_result(price_analysis, "data/price_analysis.csv")
-    save_analysis_result(volume_analysis, "data/volume_analysis.csv")
+    save_analysis_result(price_analysis, "/opt/bitnami/spark/data//price_analysis.csv")
+    save_analysis_result(volume_analysis, "/opt/bitnami/spark/data//volume_analysis.csv")
