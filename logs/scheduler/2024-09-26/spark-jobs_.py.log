@@ -838,3 +838,10 @@
 [2024-09-26T18:20:32.384+0000] {logging_mixin.py:151} INFO - [2024-09-26T18:20:32.384+0000] {dag.py:2915} INFO - Sync 1 DAGs
 [2024-09-26T18:20:32.418+0000] {logging_mixin.py:151} INFO - [2024-09-26T18:20:32.418+0000] {dag.py:3696} INFO - Setting next_dagrun for spark_data_processing_pipeline to 2024-09-25T01:00:00+00:00, run_after=2024-09-26T01:00:00+00:00
 [2024-09-26T18:20:32.436+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark-jobs_.py took 0.171 seconds
+[2024-09-26T18:21:02.761+0000] {processor.py:157} INFO - Started process (PID=2102) to work on /opt/airflow/dags/spark-jobs_.py
+[2024-09-26T18:21:02.764+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/spark-jobs_.py for tasks to queue
+[2024-09-26T18:21:02.772+0000] {logging_mixin.py:151} INFO - [2024-09-26T18:21:02.771+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/spark-jobs_.py
+[2024-09-26T18:21:02.798+0000] {processor.py:839} INFO - DAG(s) dict_keys(['spark_data_processing_pipeline']) retrieved from /opt/airflow/dags/spark-jobs_.py
+[2024-09-26T18:21:02.854+0000] {logging_mixin.py:151} INFO - [2024-09-26T18:21:02.854+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-09-26T18:21:02.878+0000] {logging_mixin.py:151} INFO - [2024-09-26T18:21:02.878+0000] {dag.py:3696} INFO - Setting next_dagrun for spark_data_processing_pipeline to 2024-09-25T01:00:00+00:00, run_after=2024-09-26T01:00:00+00:00
+[2024-09-26T18:21:02.895+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/spark-jobs_.py took 0.141 seconds
