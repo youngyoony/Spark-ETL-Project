@@ -1,5 +1,5 @@
-# de-2024
-2024 Data Engineering PF Study 
+# The Most Detailed Project Summary
+http://youngyoon.me/archives/2868
 
 ## Directory Structure
 
